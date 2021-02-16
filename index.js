@@ -16,19 +16,19 @@ $(document).ready(function(){
     /* Start - Exclusive Features - Big Images on Click*/
     
     gif01.click(function(){gif(gif01,heading='Agile-Scrum Dashboard',
-            content='Agile Scrum Dashboardwill allow you to manage projects and view complete sprint within a single page and simple interface.',
+            content='Agile Scrum Dashboard will allow you to manage projects and view complete sprint within a single page and simple interface.',
             imgClass="excl-img-1")})
     gif02.click(function(){gif(gif02,heading='Project Builder',
             content='Create project with complete Package of your every new project',
             imgClass="excl-img-2")})
     gif03.click(function(){gif(gif03,heading='Methodology Based Risk Register',
-            content='Risk is often assumed to be negative but it is important to note that project risk can also be occasionally be positive. NioM will tell you risks associated based on your decision.',
+            content='Risk is often assumed to be negative but it is important to note that project risk can also be occasionally.Be positive, NioM will tell you risks associated based on your decision.',
             imgClass="excl-img-3")})
     gif04.click(function(){gif(gif04,heading='Automate Sprint Planning',
-        content='Let NioM to forecast the user stories, tasks and bugs in your next sprint based onyour previous learnings and velocity of team. Its time to decrease the failure rateof sprints and win the confidence of your customer.',
+        content='Let NioM to forecast the user stories, tasks and bugs in your next sprint based on your previous learnings and velocity of team. Its time to decrease the failure rate of sprints and win the confidence of your customer.',
         imgClass="excl-img-4")})
     gif05.click(function(){gif(gif05,heading='Remote Team Monitoring',
-        content='As the COVID-19 pandemic has progressed, many companies have shifted to remote work. How you will know, whether your team is working is on your projector doing some other activities. NioM will spy on your team activities now and will show you in your dashboard.',
+        content='As the COVID-19 pandemic has progressed, many companies have shifted to remote work. How you will know, whether your team is working  on your projector  and doing some other activities. NioM will spy on your team activities now and will show you in your dashboard.',
         imgClass="excl-img-5")})
     gif06.click(function(){gif(gif06,heading='Keep Team Focused and Productive',
         content='Employees who are concerned about their future are likely to be distracted and unproductive. Keep your team focused with their day goals and tasks.',
@@ -123,7 +123,7 @@ $(document).ready(function(){
     ugif06.click(function(){
         ugif(ugif06,
             heading="Document User Story under Epics",
-            content="Don’t worry, if you don’ know to create perfect User Stories. NioM has solved your problem",
+            content="Don’t worry, if you don’t know to create perfect User Stories. NioM has solved your problem",
             "img-class-6")})
     ugif07.click(function(){
         ugif(ugif07,
@@ -138,7 +138,7 @@ $(document).ready(function(){
     ugif09.click(function(){
         ugif(ugif09,
             heading="Track Retrospective Meetings",
-            content="Centralized all your leanings at one place, share them with your team and consider in sprint planning",
+            content="Centralized all your learnings at one place, share them with your team and consider in sprint planning",
             "img-class-9")})
     ugif10.click(function(){
         ugif(ugif10,
