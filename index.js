@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     const gif01 = $('#gif-01');
     const gif02 = $('#gif-02');
     const gif03 = $('#gif-03');
@@ -48,7 +49,7 @@ $(document).ready(function(){
     gif11.click(function(){gif(gif11,heading='Track, How Many Priority Changed',
         content='Frequent changes in priority usually result from a project scope change, which directly impacts on both cost and schedule. NioM will track this',
         imgClass="excl-img-11")})
-    gif12.click(function(){gif(gif12,heading='Let Niohm forecast Project Delivery Date',
+    gif12.click(function(){gif(gif12,heading='Let NioM forecast Project Delivery Date',
         content='Add list of features, NioM will tell you delivery date of project',
         imgClass="excl-img-12")})
     gif13.click(function(){gif(gif13,heading='Track hidden Task',
@@ -204,7 +205,7 @@ $(document).ready(function(){
 
 
     var scroll_w = $('#ls-scroll').width();
-
+     var wWidth = $(window).width();
 
     document.getElementById('btn-right').onclick = function () {
         document.getElementById('ls-scroll').scrollLeft += scroll_w;
@@ -505,5 +506,6 @@ function dots(arr) {
 
 dots([".dot-container",".dot-container2",".dot-container3",".dot-container4"])
 });
+
 
 
