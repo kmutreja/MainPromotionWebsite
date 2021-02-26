@@ -470,7 +470,7 @@ $(document).ready(function(){
                                 var getEml = $(`#email${index+1}`).val();
                                 var d = `${org_id}and${getEml}`
                                 data = dataEncrypt(`${d}`);
-                                var lnk = `https://niohmdemo.niohm-pmo.online/index.html?d=${data}`
+                                var lnk = `https://niompmo.com?d=${data}`
                                 Email.send({ 
                                         SecureToken:'ab1a4f0f-e473-4a21-8ae7-a45f51d5b813',
                                         Host: "smtpout.secureserver.net", 
