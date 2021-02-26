@@ -23,7 +23,7 @@ $(document).ready(function(){
         $('#cross-times').click(function(){
                 if(lastForm == true){
                         $('#modal-box').css({'display':'none'});
-                        pageRedirect('https://niohmdemo.niohm-pmo.online/index.html', 0);
+                        pageRedirect('https://niompmo.com', 0);
                         lastForm = false;
                 }else {
                         $('#modal-box').css({'display':'none'});
