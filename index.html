@@ -56,13 +56,13 @@
                                                 <a class="nav-link nav-color-link lk" href="#contact">Contact</a>
                                         </li>
                                         <li class="nav-item nav-item-back-color">
-                                                <a class="nav-link nav-color-link lk" href="#sign-up"  id="signup" style="display: none;">Sign Up</a>
+                                                <a class="nav-link nav-color-link lk" href="https://nanotech-softapp.com"   target="_blank">Join Us</a>
                                         </li>
                                         <li class="nav-item ml-auto navbtn2  bt1">
                                                 <a class="nav-link color-navbtn2 ak1 alc" href="https://www.app.niompmo.com" style="font-size: 16px !important; font-weight: 500 !important;" target="_blank">Login</a>
                                         </li>
                                         <li class="nav-item navbtn  bt2">
-                                                <a class="nav-link color-navbtn ak2 alc" href="https://nanotech-softapp.com" style="font-size: 16px !important; font-weight: 500 !important;" target="_blank">Join Us</a>
+                                                <a class="nav-link color-navbtn ak2 alc" href="#sign-up"  id="signup" style="font-size: 16px !important; font-weight: 500 !important;" >Sign Up</a>
                                         </li>
                                 </ul>
                         </div>
@@ -94,8 +94,19 @@
                                         <br>
                                         <p >NioM PMO is PMP based and AI focused Project Management tool for</p>
                                         <div class="trans-layer">
-                                                <div class="trans-inner"><span></span></div>
-                                         </div>
+                                                <div class="feat-list-row2">
+                                                <div class="trans-inner">Product Owners</div>
+                                                <div class="trans-inner">Product Managers</div>
+                                                <div class="trans-inner">Sponsor/Initiator</div>
+                                                <div class="trans-inner">Business Analyst</div>
+                                                <div class="trans-inner">Scrum Master</div>
+                                                <div class="trans-inner">Developers</div>
+                                                <div class="trans-inner">Quality Analyst</div>
+                                                <div class="trans-inner">Designers</div>
+                                                <div class="trans-inner">Cross-Functional Project Manager</div>
+                                                <div class="trans-inner">Remote Team Monitoring</div>
+                                                </div>
+                                        </div>
 
                                         <br />
                                         <br>
@@ -489,7 +500,7 @@
                                 <div class="head">
                                         <h1>Exclusive Feature</h1>
                                 </div>
-                                <div class="exclusive-feat-list" style="">
+                                <div class="exclusive-feat-list"        >
                                         <h3 id="gif-01" class="exclusive-feat-active gif-change"><span>01</span>Agile-Scrum Dashboard</h3>
                                         <h3 id="gif-02"  class="gif-change"><span>02</span>Project Builder</h3>
                                         <h3 id="gif-03" class="gif-change"><span>03</span>Methodology based risk register</h3>
@@ -1434,182 +1445,145 @@
         <!--Modal Box-->
         <div class="modal" id="modal-box" id="sign-up">
                 <div class="modal-main">
-                        <div class="modal-content-box" style="width:50%;">
-                                <div class="flex-row" style="justify-content: flex-end;">
-                                        <span class="close" id="cross-times">&#x2715;</span>
-                                </div>
-
-                                <div class="flex-row" style="justify-content: center">
-                                        <p class="modal-welcome-msg">Welcome to <span style="color: rgb(81,97,172); font-weight: 500;">N</span><span style="color: rgb(81,97,172);font-weight: 500;">i</span><span style="color: rgb(44,55,141);font-weight: 500;">o</span><span style="color: rgb(44,55,141);font-weight: 500;">M</span><span style="color: rgb(242,106,156);font-weight: 500; font-size: 0.9em;">P</span><span style="color: rgb(242,106,156);font-weight: 500; font-size: 0.9em;">M</span><span style="color: rgb(242,106,156);font-weight: 500;font-size: 0.9em;">O</span>
+                        <div class="modal-content-box">
+                                <span class="close" id="cross-times">&#x2715;</span>
+                                <div class="msg-row">
+                                        <p class="modal-welcome-msg">Welcome to 
+                                                <span style="color: rgb(81,97,172); font-weight: 500;">N</span><span style="color: rgb(81,97,172);font-weight: 500;">i</span><span style="color: rgb(44,55,141);font-weight: 500;">o</span><span style="color: rgb(44,55,141);font-weight: 500;">M</span><span style="color: rgb(242,106,156);font-weight: 500; font-size: 0.9em;">P</span><span style="color: rgb(242,106,156);font-weight: 500; font-size: 0.9em;">M</span><span style="color: rgb(242,106,156);font-weight: 500;font-size: 0.9em;">O</span>
                                         </p>
                                 </div>
                                 <div class="flex-row" style="justify-content: center">
-                                        <p class="modal-sub-heading">lorem ipsum lorem Ipsum Lorem ispdsum lorem ipsum lorem ipsum lorem ipsum</p>
+                                        <p class="modal-sub-heading">Please provide some Organization details.</p>
                                 </div>
-                                
+
                                 <!--Step 1-->
+                                <div class="form-container">
                                 <form action="#" method="POST" id="orgForm">
-                                        <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 80%;">
-                                                <label for="parent-comp">Parent Company Name</label>
-                                                <input type="text" name='parent-comp' id="parent-comp" placeholder="Enter Parent Company Name">
-                                        </div>
-                                        <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 80%;">
-                                                <label for="org-sis-comp">Company Name</label>
-                                                <input type="text" name="org-sis-comp" id="org-sis-comp" placeholder="Enter Company Name">
-                                        </div>
-                                        <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 80%;">
-                                                <label for="location">Location</label>
-                                                <input type="text" name="location" id='location' placeholder="Enter Location">
-                                        </div>
-                                        <div class="flex-row all-form-input aft-msg" style="justify-content: center;">
-                                                <button style="width: 80%;">Sign Up</button>
-                                        </div>
-                                </form>
-                                <!--Step 1-->
-
-                                <!-- Step 2 -->
-                                <form action="" method="POST" id="licenseForm" >
-                                        <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 80%;">
-                                                <label for="emailL">Email</label>
-                                                <input type="text" name='emailL' id="emailL" placeholder="Enter Your Email">
-                                        </div>
-                                        <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 80%;">
-                                                <label for="funame">Full Name</label>
-                                                <input type="text" name='funame' id="funame" placeholder="Enter Your Full Name">
-                                        </div>
-                                        <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 80%;">
-                                                <label for="noLic">Licenses</label>
-                                                <input type="number" name='noLic' id="noLic" placeholder="No. of Licenses">
-
-                                        </div>
-                                        <input type="flex-column all-form-input" name='orgId' id="orgId" hidden>
-                                        <div class="flex-row" style='justify-content: center; padding-top: 1%;'  id="erry-msg">
-                                                <p class="form-error-msg"></p>
-                                        </div>
-                                        <div class="flex-column all-form-input aft-msg" style="justify-content: center;">
-                                                <button  style="width: 80%;">Submit</button>
-                                        </div>
-                                </form>
-                                <!-- Step 2 -->
-
-                                <!--Step 3-->
-                                <form action="" method="POST" id="registerForm">
                                         <div class="flex-row" style="justify-content: space-between;">
-                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;" id="regFf">
-                                                        <label for="emailN">Email</label>
-                                                        <input type="email" name='emailN' id="emailN"  readonly>
+                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
+                                                        <label for="org_name">Organization Name</label>
+                                                        <input type="text" name='org_name' id="org_name" class='of of1' placeholder="Enter Your Organization Name">
+                                                </div>
+                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
+                                                        <label for="business_div">Business Division</label>
+                                                        <input type="text" name='business_div' id="business_div" class='of of2' placeholder="Enter Your Business Division" >
                                                 </div>
                                         </div>
+                                        <div class="flex-row" style="justify-content: space-between;">
+                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
+                                                        <label for="name">Name</label>
+                                                        <input type="text" name='name' id="name" class='of of3' placeholder="Enter Your Name" >
+                                                </div>
+                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
+                                                        <label for="email">Email</label>
+                                                        <input type="text" name='email' id="email"  placeholder="Enter Your Email" class="of of4">
+                                                </div>
+                                        </div>
+                                        <div class="flex-row" style="justify-content: space-between;">
+                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
+                                                        <label for="location">Address</label>
+                                                        <input type="text" name='location' id="location" placeholder="Enter Your Address"  class="of of5">
+                                                </div>  
+                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
+                                                        <label for="nolic">Licenses</label>
+                                                        <input type="number" name='nolic' id="nolic"  class='of of6' placeholder="No. of Licenses">
+                                                </div>
+                                        </div>
+                                        <div class="flex-row" style='justify-content: flex-start; padding-top: 1%;'  id="erry-msg">
+                                                <p class="form-error-msg"></p>
+                                        </div>
+                                        <div class="flex-row all-form-input aft-msg" style="justify-content: center;">
+                                                <button style="width: 80%;">Submit</button>
+                                        </div>
+                                </form>
+                                <!--Step 1-->
+
+                                <!--Step 2-->
+                                <form action="" method="POST" id="registerForm">
                                         
                                         <div class="flex-row" style="justify-content: space-between;">
                                                 <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
                                                         <label for="fname">First Name</label>
-                                                        <input type="text" name='fname' id="fname" placeholder="Enter Your First Name">
+                                                        <input type="text" name='fname' id="fname" class='rf rf1' placeholder="Enter Your First Name">
                                                 </div>
                                                 <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
                                                         <label for="lname">Last Name</label>
-                                                        <input type="text" name='lname' id="lname" placeholder="Enter Your Last  Name" >
+                                                        <input type="text" name='lname' id="lname" class='rf rf2' placeholder="Enter Your Last  Name" >
                                                 </div>
                                                 
                                         </div>
 
                                         <div class="flex-row" style="justify-content: space-between;">
                                                 <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
-                                                        <label for="roleR">Role</label>
-                                                        <input type="text" name='roleR' id="roleR" placeholder="Enter Your Role">
+                                                        <label for="email">Email</label>
+                                                        <input type="text" name='email' id="email"  placeholder="Enter Your Email" class="rf rf3">
                                                 </div>
                                                 <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
-                                                        <label for="userName">Username</label>
-                                                        <input type="text" name='userName' id="userName" placeholder="Enter User Name" >
+                                                        <label for="username">Username</label>
+                                                        <input type="text" name='username' id="username" class='rf rf4' placeholder="Enter User Name" >
+                                                </div>
+                                        </div>
+
+                                        <div class="flex-row" style="justify-content: space-between;">
+                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;" id="regFf">
+                                                        <label for="role">Role</label>
+                                                        <select name="role" id="role" class='rf rf5' >
+                                                                <option value="">Select Your Role</option>
+                                                                <option value="sponsor/initiator">Sponsor/Initiator</option>
+                                                                <option value="project manager">Project Manager</option>
+                                                                <option value="business analyst">Business Analyst</option>
+                                                                <option value="scrum master">Scrum Master</option>
+                                                                <option value="product owner">Product Owner</option>
+                                                                <option value="cross-functional project manager">Cross-Functional Project Manager</option>
+                                                                <option value="developer">Developer</option>
+                                                                <option value="designer">Designer</option>
+                                                                <option value="quality analyst">Quality Analyst</option>
+                                                                <option value="team lead">Team Lead</option>
+                                                        </select>
                                                 </div>
                                         </div>
                                         <div class="flex-row" style="justify-content: space-between;">
                                                 <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
                                                         <label for="pass1">Password</label>
-                                                        <input type="password" name='pass1' id="pass1" placeholder="Enter Password" >
+                                                        <input type="password" name='pass1' id="pass1" class='rf rf7' placeholder="Enter Password" >
                                                 </div>
                                                 <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
                                                         <label for="pass2">Confirm Password</label>
-                                                        <input type="password" name='pass2' id="pass2" placeholder="Enter Confirm Password">
+                                                        <input type="password" name='pass2' id="pass2" class='rf rf8' placeholder="Enter Confirm Password">
                                                 </div>
                                         </div>
-                                        <input type="number" name='orgIdR' id="orgIdR" hidden>
-                                        <div class="flex-row" style='justify-content: center; padding-top: 1%;'  id="erry-msg">
+                                        <div class="flex-row" style='justify-content: flex-start; padding-top: 1%;'  id="erry-msg">
                                                 <p class="form-error-msg"></p>
                                         </div>
                                         <div class="flex-column all-form-input aft-msg" style="justify-content: center;">
                                                 <button  style="width: 80%;">Submit</button>
                                         </div>
                                 </form>
-                                <!--Step 3-->
+                                <!--Step 2-->
 
-                                <!--Step 4-->
+                                <!--Step 3-->
                                 <form action="" method="POST" id="inviteForm">
                                         <div class="flex-row" id="frmLarge">
                                         </div>
-                                        <input type="number" name='orgIdI' id="orgIdI" hidden>
-                                        <div class="flex-row" style='justify-content: center; padding-top: 1%;'  id="erry-msg">
+                                        <div id="inlst"></div>
+                                        <div class="flex-row" style='justify-content: flex-start; padding-top: 1%;'  id="erry-msg">
                                                 <p class="form-error-msg"></p>
                                         </div>
-                                        <div class="flex-column all-form-input aft-msg" style="justify-content: center;">
-                                                <button style="width: 80%;">Submit</button>
+                                        <div class="flex-column all-form-input aft-msg" style="justify-content: center;" >
+                                                <button style="width: 40%;">Submit</button>
+                                                <a href="" class='skipBtn'>Skip</a>
                                         </div>
                                 </form>
-                                <!--Step 4-->
+                                </div>
+                                <!--Step 3-->
 
-                                <!--Team Mate Form-->
-                                <form action="" method="POST" id="registerTeamForm" >
-                                        <div class="flex-row" style="justify-content: space-between;">
-                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;" id="regFfT">
-                                                        <label for="emailT">Email</label>
-                                                        <input type="email" name='emailT' id="emailT"  readonly>
-                                                </div>
-                                        </div>
-                                        
-                                        <div class="flex-row" style="justify-content: space-between;">
-                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
-                                                        <label for="fnameT">First Name</label>
-                                                        <input type="text" name='fnameT' id="fnameT" placeholder="Enter Your First Name">
-                                                </div>
-                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
-                                                        <label for="lnameT">Last Name</label>
-                                                        <input type="text" name='lnameT' id="lnameT" placeholder="Enter Your Last  Name" >
-                                                </div>
-                                                
-                                        </div>
-
-                                        <div class="flex-row" style="justify-content: space-between;">
-                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
-                                                        <label for="roleT">Role</label>
-                                                        <input type="text" name='roleT' id="roleT" placeholder="Enter Your Role">
-                                                </div>
-                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
-                                                        <label for="userNameT">Username</label>
-                                                        <input type="text" name='userNameT' id="userNameT" placeholder="Enter User Name" >
-                                                </div>
-                                        </div>
-                                        <div class="flex-row" style="justify-content: space-between;">
-                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
-                                                        <label for="pass1T">Password</label>
-                                                        <input type="password" name='pass1T' id="pass1T" placeholder="Enter Password" >
-                                                </div>
-                                                <div class="flex-column all-form-input" style="align-items: flex-start; justify-content: flex-start; width: 47%;">
-                                                        <label for="pass2">Confirm Password</label>
-                                                        <input type="password" name='pass2T' id="pass2T" placeholder="Enter Confirm Password">
-                                                </div>
-                                        </div>
-                                        <input type="number" name='orgIdT' id="orgIdT" hidden>
-                                        <div class="flex-row" style='justify-content: center; padding-top: 1%;'  id="erry-msg">
-                                                <p class="form-error-msg"></p>
-                                        </div>
-                                        <div class="flex-column all-form-input aft-msg" style="justify-content: center;">
-                                                <button  style="width: 80%;">Submit</button>
-                                        </div>
-                                </form>
-                                <!--Team Mate Form-->
                                 
-                                <!--Error Messages-->
-                                <!--Error Messages-->
+                                <!--Next/Previous-->
+                                <!--<div class="np-row">
+                                        <button id="Pr" class="np-row-btn">Previous</button>
+                                        <button id="Nxt" class="np-row-btn">Next</button>
+                                </div>-->
+                                <!--Next/Previous-->
 
                                 <!--Messages-->
                                 <div id="success-msg">
@@ -1628,29 +1602,29 @@
         </div>
         <!--Modal Box-->
 
-        <!--Footer-->
-        <footer class="container-fluid">
-                <div class="row">
-                        <div class="col-md-4 custom-col" style="color: white; font-size: 18px;">Powered by Nanotech-SoftApp IT Solution.
-                                <br>Our Presence in   <img src="./static/images/india.jpeg" alt="" width="30px" height="25px"> and  <img src="./static/images/us.jpeg" alt="" width="30px" height="25px"></div>
-                        <div class="col-md-4 custom-col" style="color: white; font-size: 18px;">© 2021 Launch. All rights reserved.</div>
-                        <div class="col-md-4 custom-col">
-                                <div class="social rounded-circle">
-                                        <a href="https://twitter.com/nanotechsoftapp" target="_blank"><img src="./static/images/twitter.png" alt="" /></a>
-                                </div>
-                                <div class="social rounded-circle">
-                                        <a href="https://www.facebook.com/nanotech.softapp"  target="_blank"><img src="./static/images/facebook.png" alt="" /></a>
-                                </div>
-                                <div class="social rounded-circle">
-                                        <a href="https://www.linkedin.com/company/nanotech-softapp/"  target="_blank"><img src="./static/images/linkedin.png" alt="" /></a>
-                                </div>
-                                <div class="social rounded-circle">
-                                        <a href="https://www.instagram.com/nanotechsoftapp/"  target="_blank"><img src="./static/images/instagram.png" alt="" /></a>
-                                </div>
+      <!--Footer-->
+      <footer class="container-fluid">
+        <div class="row">
+                <div class="col-md-4 custom-col" style="color: white; font-size: 18px;">Powered by Nanotech-SoftApp IT Solution.
+                        <br>Our Presence in   <img src="./static/images/india.jpeg" alt="" width="30px" height="25px"> and  <img src="./static/images/us.jpeg" alt="" width="30px" height="25px"></div>
+                <div class="col-md-4 custom-col" style="color: white; font-size: 18px;">© 2021 Launch. All rights reserved.</div>
+                <div class="col-md-4 custom-col">
+                        <div class="social rounded-circle">
+                                <a href="https://twitter.com/nanotechsoftapp" target="_blank"><img src="./static/images/twitter.png" alt="" /></a>
+                        </div>
+                        <div class="social rounded-circle">
+                                <a href="https://www.facebook.com/nanotech.softapp"  target="_blank"><img src="./static/images/facebook.png" alt="" /></a>
+                        </div>
+                        <div class="social rounded-circle">
+                                <a href="https://www.linkedin.com/company/nanotech-softapp/"  target="_blank"><img src="./static/images/linkedin.png" alt="" /></a>
+                        </div>
+                        <div class="social rounded-circle">
+                                <a href="https://www.instagram.com/nanotechsoftapp/"  target="_blank"><img src="./static/images/instagram.png" alt="" /></a>
                         </div>
                 </div>
-        </footer>
-        <!--Footer-->
+        </div>
+</footer>
+<!--Footer-->
         
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -1663,7 +1637,9 @@
                 crossorigin="anonymous">
         </script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
         <script src="./index.js"></script>
+        <script src="./api.js"></script>
         <!-- External JavaScript -->
 
 </body>

@@ -205,7 +205,7 @@ $(document).ready(function(){
 
 
     var scroll_w = $('#ls-scroll').width();
-     var wWidth = $(window).width();
+
 
     document.getElementById('btn-right').onclick = function () {
         document.getElementById('ls-scroll').scrollLeft += scroll_w;
