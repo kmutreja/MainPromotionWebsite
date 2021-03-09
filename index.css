@@ -37,62 +37,34 @@ body {
     border-radius: 4px;
 }
 
-.navbtn,.navbtn2 ,.nbtn-s,.nbtn-s2{
+.navbtn,.navbtn2{
     width: 120px;
     height: 40px;
-    background: transparent;
-    border: 1px solid rgb(255,255,255);
+    background: rgb(73,93,216,0.9);
     box-sizing: border-box;
     border-radius: 4px;
     text-align: center;
-    margin-right: 5%;
-}
-.nbtn-s {
-    border: 1px solid rgb(73,93,216) !important;
-    background: rgb(73,93,216) !important;
-    color: #fff !important;
+    margin-right: 2%;
 }
 
-.nbtn-s2 {
-    border: 1px solid rgb(238,79,130) !important;
-    background: rgb(238,79,130) !important;
-    color: #fff !important;
-}
-
-.nbtn-s2:hover {
-    background: #fff !important;
-    color: rgb(238,79,130) !important;
-}
-
-.nbtn-s:hover {
-    background: #fff !important;
-    color: rgb(73,93,216) !important;
-}
 
 .navbtn2 {
     margin-right: 20px;
-    background: transparent;
-    border: 1px solid rgb(255, 255,255);
+    background: rgb(238,79,130,0.9);
+    margin-right: 5%;
 }
 
 .color-navbtn ,.color-link-fst, .color-navbtn-fst,.color-navbtn2,.alc{
     color: white !important;
 }
 
-.navbtn:hover,.navbtn2:hover {
-    background: rgb(238,79,130);
+.navbtn:hover {
+    background: rgb(73,93,216,1);
+    color: #fff !important;
 }
 
 .navbtn2:hover {
-    background: rgb(73,93,216);
-}
-
-.color-navbtn:hover{
-    color:  rgb(73,93,216) !important;
-}
-
-.color-navbtn2:hover {
-    color:  rgb(238,79,130) !important;
+    background:  rgb(238,79,130,1);
 }
 
 .navbar-toggler {
@@ -257,14 +229,14 @@ body {
 
 .banner-service-btn{
     padding: 1.5% 2.5%;
-    border: 1.5px solid #fff;
     border-radius: 4px;
     color: #fff;
+    background: rgb(238,79,130,0.9);
 }
 
 .banner-service-btn:hover {
     color: #fff !important;
-    background:  rgb(238,79,130,0.8);
+    background:  rgb(238,79,130,1);
     text-decoration: none !important;
 }
 /*Banner*/
@@ -1158,6 +1130,14 @@ body {
     border-radius: 6px;
 }
 
+.gep{
+    padding-bottom: 2%;
+    color: rgb(238, 79, 130) !important;
+    margin: 0px;
+    font-size: 16px !important;
+    font-weight: 500;
+}
+
 .input-container input {
     text-align: left;
     border: none;
@@ -1449,7 +1429,7 @@ button:focus {
     width: 50%;
     background: #fff;
     height: auto;
-    padding: 1%;
+    padding: 2%;
     border-radius: 6px;
     box-shadow:  0 0 20px rgb(0,0,0,0.7);
 }
@@ -1580,11 +1560,47 @@ select >option {
     display: flex;
 }
 
+.get-started-input{
+    width: 65%;
+    line-height: 40px;
+    text-indent: 45px;
+    background: none;
+    border: 1.5px solid #fff;
+    border-radius: 6px;
+    color: rgb(0,0,0,0.6) !important;
+    background: #fff;
+}
+
+
+.get-started-input-1{
+    line-height: 40px;
+    text-indent: 45px;
+    background: none;
+    border-radius: 6px;
+    color: #fff !important;
+    border: 2px solid rgb(238,79,130);
+}
+
+.get-started-input::placeholder{
+    color: rgb(0,0,0,0.6);
+}
+
+.get-started-input-1::placeholder{
+    color: rgb(238,79,130);
+}
+
+.get-start-eml{
+    display: flex;
+    width: auto;
+    justify-content: flex-start;
+}
+
 .skipBtn{
-    margin-top: 1%;
+    margin-top: 2%;
+    margin-right: 1%;
     padding: 1.5%;
     background: rgb(242,106,156);
-    width: 80%;
+    width: 40%;
     border: rgb(242,106,156);
     text-align: center;
     border: 1px solid rgb(242,106,156);
@@ -1597,6 +1613,141 @@ select >option {
     background: #fff;
     color: rgb(242,106,156);
 
+}
+
+.whatsapp-panel{
+    position: fixed;
+    bottom: 13%;
+    right: 5%;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 5px rgb(0,0,0,0.6);
+    display: none;
+    z-index: 444;
+}
+
+.w-panel-head{
+    background-color: #378b29;
+    background-image: linear-gradient(315deg, #378b29 0%, #74d680 74%);
+    display: inline-block;
+    border-radius: 10px 10px 0px 0px;
+    padding: 5%;
+    width: 100%;
+}
+
+.w-lnk{
+    line-height: 20px;
+    background-color: #378b29;
+    background-image: linear-gradient(315deg, #378b29 0%, #74d680 74%);
+    text-align: center;
+    width: 70%;
+    padding: 2%;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.w-logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-block;
+    float: left;
+    margin-left: 2%;
+}
+
+.w-logo-img{
+    width: 37px;
+    height: 37px;
+    display: inline-block;
+    float: left;
+    background: url(./static/images/brandloading-icon.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.u-msg{
+    width: 65%;
+    padding: 5%;
+    background: #fff;
+    color: black;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.w-msg-pannel{
+    width: 100%;
+    margin-top: -7px;
+    padding: 5%;
+    background: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png) 0% 0% no-repeat;
+    background-size: cover;
+}
+
+.footer-w {
+    width: 100%;
+    padding: 2%;
+    background: #fff;
+    border-radius: 0px 0px 6px 6px;
+    display: flex;
+    justify-content: center;
+}
+
+.w-h{
+    margin-top: 2%;
+    text-indent: 2%;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: inline-block;
+    float: left;
+    margin-left: 3%;
+    white-space: nowrap;
+}
+
+#cross-w{
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+.upper-footer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(#D8094E 50%,rgba(37, 45, 64, 0.8) 50%);
+    margin: 0;
+}
+
+.u-f-col{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: ceter;
+    align-items: center;
+    width: 33%;
+}
+
+.u-img{
+    width: auto;
+    height: 50px;
+}
+
+.whatsapp-widget{
+    width: 60px;
+    height: 60px;
+    display: block;
+    position: fixed;
+    bottom: 2%;
+    z-index: 444;
+    right: 5%;
+    background: url(./static/images/whatsapp.svg);
+    cursor: pointer;
+}
+
+.whatsapp-widget:hover{
+    animation: shake 0.2s 3 ease;
 }
 
 #frmLarge{
@@ -1680,6 +1831,16 @@ select >option {
 }
 
 /*Modal*/
+
+@media (max-width: 450px){
+    .whatsapp-panel{
+        width: 80%;
+    }
+
+    .w-h {
+        font-size: 1rem;
+    }
+}
 
 
 @media (max-width: 993px){
@@ -1832,10 +1993,27 @@ select >option {
 }
 
 @media (max-width: 768px) {
+
+    .upper-footer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .u-f-col{
+        width: 100%;
+    }
     .custom-col {
         margin-top: 2%;
         margin-bottom: 2%;
     }
+
+     .get-started-input{
+         width: 100%;
+     }
+
+     .get-started-input-1{
+         width: 100%;
+     }
 
     .banner-left-content p:first-of-type {
         font-size: 20px !important;
@@ -2120,25 +2298,6 @@ select >option {
         color: #5D678B !important;
     }
 
-    .navbtn,.navbtn2 {
-        background: rgb(238,79,130) !important;
-        border: 1px solid rgb(238,79,130) !important;
-    }
-
-    .navbtn2 {
-        background: rgb(73,93,216) !important;
-       border:1px solid rgb(73,93,216) !important ;
-    }
-
-    .navbtn:hover {
-        color: rgb(238,79,130) !important;
-        background: #fff !important;
-    }
-
-    .navbtn2:hover {
-        color: rgb(73,93,216) !important;
-        background: #fff !important;
-    }
 
     .color-navbtn2:hover {
         color: rgb(73,93,216) !important;
@@ -2514,7 +2673,7 @@ padding: 1%;
     align-items: center ;
     float: right;
     transform: scale(1.2);
-    border: 1px solid #5D678B;
+    border: 1px solid #4cbb17;
     border-radius: 50%;
 }
 
@@ -2522,19 +2681,17 @@ padding: 1%;
     display: inline-block;
     width: 13px;
     height: 7px;
-    border-bottom: 1px solid #5D678B;
-    border-left: 1px solid #5D678B;
+    border-bottom: 1px solid #4cbb17;
+    border-left: 1px solid #4cbb17;
     transform: rotate(-45deg);
     margin-top: -3px;
     margin-right: 1px;
 }
 
-.cross {
+.cross,.cross-w {
     display: inline-block;
     margin-top: 2px;
     color: #5d678b;
 }
 
 /* Price */
-
-

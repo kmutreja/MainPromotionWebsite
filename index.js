@@ -215,7 +215,6 @@ $(document).ready(function(){
       }
 
     var sw = $('#s-scroll').width();
-    console.log(sw)
     document.getElementById('s-left').onclick = function () {
         document.getElementById('s-scroll').scrollLeft -= sw;
       }
@@ -224,7 +223,6 @@ $(document).ready(function(){
       }
 
       var ew = $('#e-scroll').width();
-      console.log(sw)
       document.getElementById('e-left').onclick = function () {
           document.getElementById('e-scroll').scrollLeft -= ew;
         }
@@ -241,14 +239,10 @@ $(document).ready(function(){
             if (s_top >= 10) {
                 nav_scroll.addClass('bg-white')
                 $('.lk').removeClass('nav-color-link').addClass('nav-color-link2')
-                $('.bt1').removeClass('color-navbtn2').addClass('nbtn-s2')
-                $('.bt2').removeClass('color-navbtn').addClass('nbtn-s')
             }
             else {
                 nav_scroll.removeClass('bg-white')
                 $('.lk').removeClass('nav-color-link2').addClass('nav-color-link')
-                $('.bt1').removeClass('nbtn-s2')
-                $('.bt2').removeClass('nbtn-s')
             }
         })
 
@@ -313,7 +307,6 @@ $(document).ready(function(){
            $('#msg-success').css({'display':"block"})
           }); 
 
-          console.log(true)
       } 
 
       function sendEmail2(emlN) { 
@@ -429,7 +422,6 @@ $(document).ready(function(){
             $("#email-error").css({'display':'block'})
             c=c+1
          }
-        console.log(c)
          if(c==0){
             $('#msg-success1').css({'display':'block'})
             sendEmail(name, lname, mno, eml, comp,job, city,country,nlic);
@@ -470,34 +462,28 @@ $(document).ready(function(){
     })
 
 function dots(arr) {
-    console.log(arr.length)
     for (var i=0;i<=arr.length;i++){
-        console.log(i)
         if(arr[i]==".dot-container"){
             for (let j = 0; j <= 40; j++){
                 $(arr[i]).append($('<span class="dot"></span>'));
-                console.log(true)
             }
         } 
         
         if(arr[i]==".dot-container2"){
             for (let j = 0; j <= 40; j++){
                 $(arr[i]).append($('<span class="dot1"></span>'));
-                console.log(true)
             }
         }
         
         if(arr[i]==".dot-container3"){
             for (let j = 0; j <= 40; j++){
                 $(arr[i]).append($('<span class="dot2"></span>'));
-                console.log(true)
             }
         }
         
         if(arr[i]==".dot-container4") {
             for (let j = 0; j <= 40; j++){
                 $(arr[i]).append($('<span class="dot3"></span>'));
-                console.log(true)
             }
         }
         
