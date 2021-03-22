@@ -116,7 +116,7 @@ $(document).ready(function(){
                         url:'https://production.backend.niompmo.com/account/api/promotion_mail/',
                         data:  {
                                 subject: "Visitor",
-                                to_emails: ["madhur.dev.1998@gmail.com"],
+                                to_emails: ["madhur.dev.1998@gmail.com","marketing"],
                                 body : `
                                         <p>Dear Komal,</p>
                                         <p>An user has been visited our NioM PMO website.Please find his/her details.</p>

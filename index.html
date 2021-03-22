@@ -2342,6 +2342,13 @@
                                                         <div class="g-signin2 " data-onsuccess="onSignIn">
                                                         </div>
                                                 </div>
+                                                <div class="login-logos" style="margin-top: 1%;">
+                                                        <!--<div class="llogo"></div>
+                                                        <div class="llogo"
+                                                                style="background-image: url(./static/images/t.svg);">
+                                                        </div>-->
+                                                        <div class="fb-login-button" data-width="" data-size="medium" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
+                                                </div>
                                         </form>
                                 </div>
                         </div>
@@ -2423,9 +2430,7 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-        <script async defer crossorigin="anonymous"
-                src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=798404417753610&autoLogAppEvents=1"
-                nonce="g26PGQvV"></script>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=408881163819553&autoLogAppEvents=1" nonce="7fnf5Ks2"></script>
         <script src="./index.js"></script>
         <script src="./Cookies.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -2457,6 +2462,71 @@
                                 });
                         }
                 }
+
+
+
+                window.fbAsyncInit = function() {
+                        FB.init({
+                                appId      : '408881163819553',
+                                cookie     : true,
+                                xfbml      : true,
+                                version    : 'v10.0'
+                        });
+                        
+                };
+
+                (function(d, s, id){
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) {return;}
+                        js = d.createElement(s); js.id = id;
+                        js.src = "https://connect.facebook.net/en_US/sdk.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+
+                //FB.getLoginStatus(function(response) {
+                        //statusChangeCallback(response);
+                //});
+
+                function checkLoginState() {
+                        FB.login(function(response){
+                                if(response.authResponse){
+                                        getFBUserData();
+                                }
+                        },{scope:"email"})
+                }
+
+                function getFBUserData(){
+                        FB.api('/me',{locale:"en_US",fields:'first_name,last_name,email'},
+                                function(response){
+                                        if (Cookies.get("niomvisitor") == undefined) {
+                                                $('.main-landing-page').hide();
+                                                $('#outerLogo').css({ 'display': 'block' });
+                                                axios({
+                                                        method: 'post',
+                                                        url: 'https://production.backend.niompmo.com/account/api/promotion_mail/',
+                                                        data: {
+                                                                subject: "Visitor",
+                                                                to_emails: ["madhurtiwari.30march@gmail","marketing@niompmo.com"],
+                                                                body: `
+                                                                                <p>Dear Komal,</p>
+                                                                                <p>An user has been visited our NioM PMO website.Please find his/her details.</p>
+                                                                                <p>Name : ${response.first_name} ${response.last_name}</p>
+                                                                                <p>Email : ${response.email}</p>
+                                                                        `,
+                                                        }
+                                                }).then(() => {
+                                                        Cookies.set('niomvisitor', "n!p@i#m$o%o^m&tool", { expiry: 3600 * 24 * 365 });
+                                                        $('#outerLogo').css({ 'display': 'none' });
+                                                        $(".main-page").show();
+                                                        FB.logout();
+                                                });
+                                        }
+                                }
+                        )
+                }
+
+
+        
         </script>
         <!-- External JavaScript -->
 
