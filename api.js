@@ -1,5 +1,16 @@
 $(document).ready(function(){
 
+        var url_param = new URLSearchParams(location.search);
+
+        function removeQuotes(q){
+                var nq = q
+                for (let i = 0; i <2; i++){
+                        nq = nq.replace(`"`,"")
+                }
+                console.log(nq)
+                return nq;
+        }
+
         //AfterLoad
         function showLandingPage(){
                 setTimeout(function(){
@@ -12,12 +23,10 @@ $(document).ready(function(){
 
         
         
-        if(Cookies.get('niomvisitor')==undefined && !`${$(location).attr('href')}`.includes("?d=") &&  !`${$(location).attr('href')}`.includes("#price")){
-                showLandingPage();
-                setTimeout(function(){
-                        $("#cookieModal").show();
-                },500)
-        }
+                if(Cookies.get('niomvisitor')==undefined && url_param.get("d")==null && url_param.get("vmail")==null &&  url_param.get("vc")==null ){
+                        showLandingPage();
+                }
+        
         //AfterLoad
 
 
@@ -111,29 +120,62 @@ $(document).ready(function(){
         $("#landingForm").submit(function(e){
                 $('.main-landing-page').hide();
                 $('#outerLogo').css({'display':'block'});  
+                emlLog = $('#landingForm').find('input[name="emailLog"]').val();
+                
                 axios({
                         method:'post',
                         url:'https://production.backend.niompmo.com/account/api/promotion_mail/',
                         data:  {
-                                subject: "Visitor",
-                                to_emails: ["madhur.dev.1998@gmail.com","marketing"],
+                                subject: "Verification From NioM PMO",
+                                to_emails: [`${emlLog}`],
                                 body : `
-                                        <p>Dear Komal,</p>
-                                        <p>An user has been visited our NioM PMO website.Please find his/her details.</p>
-                                        <p>Email : ${$('#landingForm').find('input[name="emailLog"]')}</p>
+                                <body>
+                                <div style="display: block; width: 70%; border: 1px solid greenyellow; margin: 20px auto; padding: 1%;">
+                                        <div style="width: 100%; display: block;">
+                                                <img src="https://www.production.backend.niompmo.com/media/profile_pics/niom_small_logo.png" alt="">
+                                        </div>
+                                        <h1 style="color: #fff; background: #1E90FF; padding: 2%; text-align: center;">Please click on the below button</h1>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <a href="https://www.niompmo.com?vmail=${dataEncrypt(emlLog)}&vc=${dataEncrypt("n!p@i#m$o%o^m&tool")}" style="width: 100%; display: block;  text-decoration: none;">
+                                            <h2 style="width: 100px; border:  1px solid #000080; padding: 1% 2%; display: block; margin: 0 auto; text-align: center; border-radius: 0.5vw; background: #000080; color: #fff;">Verify</h2>
+                                        </a>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <p style="margin: 0; padding: 0;">Thanks & Regards</p>
+                                        <p style="margin: 0; padding: 0;">NioMPMO</p>
+                                </div>
+                            </body>
                                         `,
                         }       
                 }).then(()=>{
-                        Cookies.set('niomvisitor',"n!p@i#m$o%o^m&tool",{expiry:3600*24*10})
-                        $('#outerLogo').css({'display':'none'});   
-                        $(".main-page").show();  
+                        setTimeout(function(){
+                                $('#outerLogo').css({'display':'none'}); 
+                                
+                        },1000);
+                        setTimeout(function(){
+                                $('.main-landing-page').show();
+                        },1000);
+                        setTimeout(function(){
+                                $("#cookieModal").show();
+                        },500)
                 });
                 return false;
         });
 
-        $('#cA').click(function(){
-                $('#cookieModal').hide();
+        $('.cookieA').click(function(){
+                $('.lp-modal').hide();
         });
+
+        setTimeout(function(){
+                $('#noteModal').show();
+        },5000);
+
+        $('.landing-pg-btn').click(function(){
+                $("#noteModal").show();
+        })
         //LandingForm
 
 
@@ -172,21 +214,44 @@ $(document).ready(function(){
         //DataMail
 
         //Team Mate Registration
-        if(`${$(location).attr('href')}`.includes("?")){
+        if(url_param.get('d')){
                 $('#modal-box').css({'display':'block'});
                 $('#orgForm').css({'display':'none'});
                 $('.modal-sub-heading').empty().text('Please provide some basic details to register your account.');
                 $('#registerForm').css({"display":'flex'});
                 $("#steps").css({"display":"none"})
-                var elpara = new URLSearchParams(location.search);
-                var decrypt = decryptData (decodeURIComponent(elpara.get('d')));
+                var decrypt = decryptData (decodeURIComponent(url_param.get('d')));
                 $('#registerForm').find('input[name="email"]').val(getData(decrypt).email);
                 localStorage.setItem('oid',getData(decrypt).id);
         }
 
-        if(`${$(location).attr('href')}`.includes("#signup")){
-                $('#modal-box').css({'display':'block'});
-                $('#orgForm').css({'display':'flex'});
+        if(url_param.get("vmail") && url_param.get("vc")){
+                var decryptmail = decryptData (decodeURIComponent(url_param.get('vmail')));
+                var decryptcookie = decryptData (decodeURIComponent(url_param.get('vc')));
+                $('#orgForm').find('input[name="email"]').val(removeQuotes(decryptmail));
+                Cookies.set('niomvisitor', removeQuotes(decryptcookie), { expiry: 3600 * 24 * 365 });
+                axios({
+                        method: 'post',
+                        url: 'https://production.backend.niompmo.com/dashboard/api/niom_visitor/',
+                        data: {
+                                email: removeQuotes(decryptmail),
+                        }
+                }).then(()=>{
+                        axios({
+                                method: 'post',
+                                url: 'https://production.backend.niompmo.com/account/api/promotion_mail/',
+                                data: {
+                                        subject: "Visitor",
+                                        to_emails: ["marketing@niompmo.com"],
+                                        body: `
+                                                <p>Dear Komal,</p>
+                                                <p>An user has been visited our NioM PMO website.Please find his/her details.</p>
+                                                <p>Email : ${removeQuotes(decryptmail)}</p>
+                                                `,
+                                }
+                        })
+                        $('#orgForm').show();
+                })
         }
         //Team Mate Registration
 
@@ -593,21 +658,42 @@ $(document).ready(function(){
                         }).then((res) => {
                                 if(res.data.status == true){
                                         if( !`${$(location).attr('href')}`.includes("?")){
-                                                $('#loading').css({'display':'none'});
-                                                $('#st2').css({"color":"#0bab64"})
-                                                $('#sl2').css({"border":'2px solid #0bab64'})
-                                                $('#sc3').css({"border": '2px solid #0bab64'})
-                                                $('#stt3').css({"color":'#0bab64'})
-                                                $('.modal-sub-heading').empty().text("Please provide your team members email id to inivite them.")
-                                                $('#registerForm').css({'display':'none'});
-                                                $('#inviteForm').css({'display':'flex'});
-                                                $(".form-error-msg").empty();
-                                                inviteLast = true;
-                                                console.log(userData)
+                                                if( localStorage.getItem("nolic") > 1){
+                                                        $('#loading').css({'display':'none'});
+                                                        $('#st2').css({"color":"#0bab64"});
+                                                        $('#sl2').css({"border":'2px solid #0bab64'});
+                                                        $('#sc3').css({"border": '2px solid #0bab64'});
+                                                        $('#stt3').css({"color":'#0bab64'});
+                                                        $('.modal-sub-heading').empty().text("Please provide your team members email id to inivite them.")
+                                                        $('#registerForm').css({'display':'none'});
+                                                        $('#inviteForm').css({'display':'flex'});
+                                                        $(".form-error-msg").empty();
+                                                        inviteLast = true;
+                                                } else{
+                                                        $('#loading').css({'display':'none'});
+                                                        $('.modal-sub-heading').empty();
+                                                        $("#steps").css({"display":"none"});
+                                                        $('#registerForm').css({'display':'none'});
+                                                        $('#success-msg').css({'display':'flex'});
+                                                        sendFilledForm(
+                                                                e=userData["Email"],
+                                                                hmsg = "You have been successfully registered with our NioM PMO tool with following details :",
+                                                                im=0,
+                                                                rm= ''
+                                                        );
+                                                        sendFilledForm(
+                                                                e="marketing@niompmo.com",
+                                                                hmsg = "An user has been succeefully registered with our NioM PMO tool with following details",
+                                                                im=0,
+                                                                rm= ''
+                                                        );
+                                                        lastForm =true;
+                                                        localStorage.removeItem('oid');
+                                                }
                                         }else{
                                                 $('#loading').css({'display':'none'});
                                                 $('.modal-sub-heading').empty();
-                                                $("#steps").css({"display":"flex"})
+                                                $("#steps").css({"display":"none"})
                                                 $('#registerForm').css({'display':'none'});
                                                 $('#success-msg').css({'display':'flex'});
                                                 lastForm =true;

@@ -1514,6 +1514,77 @@ button:focus {
     animation: landing-popup 0.6s 1 ease;
 }
 
+.note-modal-box{
+    width: 60%;
+    height: 400px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    background: url(./static/images/note-modal3.jpg) no-repeat;
+    background-size: 110% 110%;
+    background-position: center;
+    background-color: #fff;
+    border-radius: 0.4vw;
+    box-shadow: 5px 0px 9px rgba(0,0,0,0.5);
+    animation: landing-popup 0.6s 1 ease;
+}
+
+.right-side-note-modal{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+   
+}
+
+.right-side-note-modal p:first-child{
+    width: 80%;
+    font-size: 1.1vw;
+    margin: 60px 0px 0px 20px;
+    text-align: left;
+    text-align-last: left;
+}
+
+.right-side-note-modal p span{
+    font-size: 1.4vw;
+    font-weight: 550;
+}
+
+
+@media (max-width: 1000px){
+    .note-modal-box{
+        height: 300px;
+    }
+
+    .right-side-note-modal p:first-child{
+        margin-top: 40px;
+    }
+}
+
+@media(max-width: 768px){
+    .note-modal-box{
+        width: 90%;
+        height: 200px;
+    }
+
+    .right-side-note-modal p:first-child{
+            font-size: 1.3vw;
+    }
+}
+
+@media (max-width:500px){
+    .right-side-note-modal p:first-child{
+        font-size: 1.5vw;
+    }
+
+    .note-modal-box{
+        width: 90%;
+        height: 180px;
+    }
+}
+
 .flex-row{
     width: 100%;
     display: flex;
