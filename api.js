@@ -124,28 +124,37 @@ $(document).ready(function(){
                 
                 axios({
                         method:'post',
-                        url:'https://production.backend.niompmo.com/account/api/promotion_mail/',
+                        url:'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
                         data:  {
-                                subject: "Verification From NioM PMO",
+                                subject: "Warm Welcome from NioM PMO Team - Your one stop solution for project management needs.",
                                 to_emails: [`${emlLog}`],
                                 body : `
                                 <body>
-                                <div style="display: block; width: 70%; border: 1px solid greenyellow; margin: 20px auto; padding: 1%;">
+                                <div style="display: block; width: 100%; border: 1px solid greenyellow; margin: 20px auto; padding: 1%;">
                                         <div style="width: 100%; display: block;">
                                                 <img src="https://www.production.backend.niompmo.com/media/profile_pics/niom_small_logo.png" alt="">
                                         </div>
-                                        <h1 style="color: #fff; background: #1E90FF; padding: 2%; text-align: center;">Please click on the below button</h1>
+                                        <h4>Hello Visitor,</h4>
+                                        <p>Greetings!</p>
+                                        <p>Thank you for your visit on <a href="https://www.niompmo.com?vmail=${dataEncrypt(emlLog)}&vc=${dataEncrypt("n!p@i#m$o%o^m&tool")}">NioM PMO website</a>. NioM PMO is one stop solution for all your project management needs.</p>
                                         <br>
+                                        <p>Please click here <a href='https://www.noiompmo.com?vmail=${dataEncrypt(emlLog)}&vc=${dataEncrypt("n!p@i#m$o%o^m&tool")}'>https://www.niompmo.com</a> to verify your email id and follow following steps  to activate your license & start tracking your project.</p>
                                         <br>
+                                        <p><span style="font-weight: 550;">Step 1</span> – On Website, click on Signup Button</p>
+                                        <p><span style="font-weight: 550;">Step 2</span> – Fill up your Organization details and other required details.</p>
+                                        <p><span style="font-weight: 550;">Step 3</span> – Login on our tool <a href="https://www.app.niompmo.com">https://www.app.niompmo.com</a> with the same credentials, you created.</p>
+                                        <p><span style="font-weight: 550;">Step 4</span> – Click on <span style="font-weight: 550;">Invite</span> User Button to invite your team.</p>
                                         <br>
-                                        <a href="https://www.niompmo.com?vmail=${dataEncrypt(emlLog)}&vc=${dataEncrypt("n!p@i#m$o%o^m&tool")}" style="width: 100%; display: block;  text-decoration: none;">
-                                            <h2 style="width: 100px; border:  1px solid #000080; padding: 1% 2%; display: block; margin: 0 auto; text-align: center; border-radius: 0.5vw; background: #000080; color: #fff;">Verify</h2>
-                                        </a>
+                                        <p>Please use chat option for any support or email us at support@niompmo.com.</p>
+                                        <p>Please let us know, if you face any issue. We will happy to assist you. Request you to please share your feedback.</p>
                                         <br>
-                                        <br>
-                                        <br>
-                                        <p style="margin: 0; padding: 0;">Thanks & Regards</p>
-                                        <p style="margin: 0; padding: 0;">NioMPMO</p>
+                                        <h3>Thanks & Regards</h3>
+                                        <p>NioM PMO Team powered by Nanotech Soft-App IT Solution</p>
+                                        <p><span style="font-weight: 550;">Email id </span> - support@nionpmo.com</p>
+                                        <p><span style="font-weight: 550;">Calendly Link </span> - <a href="https://calendly.com/nanotechsoftapp">https://calendly.com/nanotechsoftapp</a></p>
+                                        <p><span style="font-weight: 550;">Linkedin </span> - <a href="https://www.linkedin.com/company/nanotech-softapp/">https://www.linkedin.com/company/nanotech-softapp/</a></p>
+                                        <p><span style="font-weight: 550;">Website </span> - <a href="https://www.nanotech-softapp.com">https://www.nanotech-softapp.com</a></p>
+                                        <p><span style="font-weight: 550;">New Launch Product </span> - <a href="https://www.niompmo.online?vmail=${dataEncrypt(emlLog)}&vc=${dataEncrypt("n!p@i#m$o%o^m&tool")}">https://www.niompmo.com</a></p>
                                 </div>
                             </body>
                                         `,
@@ -180,10 +189,10 @@ $(document).ready(function(){
 
 
         //DataMail
-        function sendFilledForm(e,hmsg,im,rm){
+        function sendFilledForm(e,hmsg,rm,sign){
                 axios({
                         method: 'post',
-                        url: 'https://production.backend.niompmo.com/account/api/promotion_mail/',
+                        url: 'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
                         data: {
                                 subject:'Successfull Registration Confirmation with NioM PMO' ,
                                 to_emails: [e],
@@ -202,17 +211,19 @@ $(document).ready(function(){
                                                 <p style="text-align: left; text-align-last: left; font-size: 16px;"><b>Country : </b>  ${userData["Country"]}</p>
                                                 <p style="text-align: left; text-align-last: left; font-size: 16px;"><b>Role : </b> ${userData["Role"]}</p>
                                                 <p style="text-align: left; text-align-last: left; font-size: 16px;"><b>No of Licenses : </b>  ${userData["No of Licenses"]}</p>
-                                                <p style="text-align: left; text-align-last: left; font-size: 16px;"><b>Invited Mails : </b>  ${im}</p>
                                                 <p style="text-align: left; text-align-last: left; font-size: 16px;">${rm}</p>
+
                                         </div>
                                 </div>
+                                <br>
+                                ${sign}
                         </body>
                                         `,
                         }
                 });
         }
         //DataMail
-
+        var is_management = true;
         //Team Mate Registration
         if(url_param.get('d')){
                 $('#modal-box').css({'display':'block'});
@@ -222,6 +233,8 @@ $(document).ready(function(){
                 $("#steps").css({"display":"none"})
                 var decrypt = decryptData (decodeURIComponent(url_param.get('d')));
                 $('#registerForm').find('input[name="email"]').val(getData(decrypt).email);
+                $('.rl').remove();
+                is_management = false;
                 localStorage.setItem('oid',getData(decrypt).id);
         }
 
@@ -232,14 +245,14 @@ $(document).ready(function(){
                 Cookies.set('niomvisitor', removeQuotes(decryptcookie), { expiry: 3600 * 24 * 365 });
                 axios({
                         method: 'post',
-                        url: 'https://production.backend.niompmo.com/dashboard/api/niom_visitor/',
+                        url: 'https://www.production.backend.niompmo.com/dashboard/api/niom_visitor/',
                         data: {
                                 email: removeQuotes(decryptmail),
                         }
                 }).then(()=>{
                         axios({
                                 method: 'post',
-                                url: 'https://production.backend.niompmo.com/account/api/promotion_mail/',
+                                url: 'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
                                 data: {
                                         subject: "Visitor",
                                         to_emails: ["marketing@niompmo.com"],
@@ -515,7 +528,7 @@ $(document).ready(function(){
 
                         axios({
                                 method:'post',
-                                url:'https://production.backend.niompmo.com/account/api/license/',
+                                url:'https://www.production.backend.niompmo.com/account/api/license/',
                                 data:  {
                                         org_data :{
                                                 parent_name :`${org_name}`,
@@ -585,6 +598,9 @@ $(document).ready(function(){
                 var lname = $('#registerForm').find('input[name="lname"]').val();
                 var eml = $('#registerForm').find('input[name="email"]').val();
                 var uname = $('#registerForm').find('input[name="username"]').val();
+                if(url_param.get('d') === undefined){
+                        var role = $('#registerForm').find('select[name="role"]').val();
+                }
                 var role = $('#registerForm').find('select[name="role"]').val();
                 var country = $('#registerForm').find('select[name="country"]').val();
                 var pass1 = $('#registerForm').find('input[name="pass1"]').val();
@@ -593,7 +609,7 @@ $(document).ready(function(){
                 var errorCount = 0;
                         
                 $('.rf').each(function(index){
-                        if($(`.rf${index+1}`).val() == ''){
+                        if($(`.rf${index+1}`).val() == '' ){
                                 e.preventDefault();
                                 $(`.rf${index+1}`).css({'border':'2px solid red'});
                                 errorCount = errorCount + 1;
@@ -624,7 +640,7 @@ $(document).ready(function(){
                         e.preventDefault()
                         $('#registerForm').find("input[name='pass2']").css({'border':'2px solid red'})
                         $('#registerForm').find("input[name='pass1']").css({'border':'2px solid red'})
-                        $(".form-error-msg").text("Password dosen't match !");
+                        $(".form-error-msg").text("Password dose't match !");
                         return false;
                 }
                 
@@ -635,6 +651,7 @@ $(document).ready(function(){
                         userData["Username"] = uname;
                         userData["Country"] = country;
                         userData["Role"] = role;
+                        console.log(role);
                         localStorage.setItem('inviter-name',`${fname} ${lname}`);
                         $('.np-row').css({'display':'none'})
                         $('.modal-sub-heading').empty();
@@ -644,7 +661,7 @@ $(document).ready(function(){
 
                         axios({
                                 method:'post',
-                                url:'https://production.backend.niompmo.com/account/api/register/',
+                                url:'https://www.production.backend.niompmo.com/account/api/register/',
                                 data: {
                                         first_name : `${fname}`,
                                         last_name : `${lname}`,
@@ -653,52 +670,91 @@ $(document).ready(function(){
                                         role : `${role}`,
                                         organization_id : localStorage.getItem('oid'),
                                         password : `${pass1}`,
-                                        username : `${uname}`
+                                        username : `${uname}`,
+                                        is_management : is_management,
                                 },
                         }).then((res) => {
                                 if(res.data.status == true){
-                                        if( !`${$(location).attr('href')}`.includes("?")){
-                                                if( localStorage.getItem("nolic") > 1){
-                                                        $('#loading').css({'display':'none'});
-                                                        $('#st2').css({"color":"#0bab64"});
-                                                        $('#sl2').css({"border":'2px solid #0bab64'});
-                                                        $('#sc3').css({"border": '2px solid #0bab64'});
-                                                        $('#stt3').css({"color":'#0bab64'});
-                                                        $('.modal-sub-heading').empty().text("Please provide your team members email id to inivite them.")
-                                                        $('#registerForm').css({'display':'none'});
-                                                        $('#inviteForm').css({'display':'flex'});
-                                                        $(".form-error-msg").empty();
-                                                        inviteLast = true;
-                                                } else{
-                                                        $('#loading').css({'display':'none'});
-                                                        $('.modal-sub-heading').empty();
-                                                        $("#steps").css({"display":"none"});
-                                                        $('#registerForm').css({'display':'none'});
-                                                        $('#success-msg').css({'display':'flex'});
-                                                        sendFilledForm(
-                                                                e=userData["Email"],
-                                                                hmsg = "You have been successfully registered with our NioM PMO tool with following details :",
-                                                                im=0,
-                                                                rm= ''
-                                                        );
-                                                        sendFilledForm(
-                                                                e="marketing@niompmo.com",
-                                                                hmsg = "An user has been succeefully registered with our NioM PMO tool with following details",
-                                                                im=0,
-                                                                rm= ''
-                                                        );
-                                                        lastForm =true;
-                                                        localStorage.removeItem('oid');
-                                                }
-                                        }else{
-                                                $('#loading').css({'display':'none'});
-                                                $('.modal-sub-heading').empty();
-                                                $("#steps").css({"display":"none"})
-                                                $('#registerForm').css({'display':'none'});
-                                                $('#success-msg').css({'display':'flex'});
-                                                lastForm =true;
-                                                localStorage.removeItem('oid');
+                                        $('#loading').css({'display':'none'});
+                                        $('#st2').css({"color":"#0bab64"});
+                                        $('#sl2').css({"border":'2px solid #0bab64'});
+                                        $('#sc3').css({"border": '2px solid #0bab64'});
+                                        $('#stt3').css({"color":'#0bab64'});
+                                        $('#st3').css({"color":"#0bab64"});
+                                        $('.modal-sub-heading').empty().text("Please provide your team members email id to inivite them.");
+                                        $('#registerForm').css({'display':'none'});
+                                        $('#success-msg').css({'display':'flex'});
+                                        $(".form-error-msg").empty();
+                                        lastForm =true;
+                                        localStorage.removeItem('oid');
+                                        rmsg="Kindly, login to <a href='https://www.app.niompmo.com'>NioM PMO</a>"
+                                        if (is_management){
+                                                rmsg = "Kindly, login to <a href='https://www.app.niompmo.com'>NioM PMO</a> and nvite your teammates."
                                         }
+                                        sendFilledForm(
+                                                e=eml,
+                                                hmsg = "You have been successfully registered with our NioM PMO tool with following details :",
+                                                rm= rmsg,
+                                                sign=`
+                                                        <h3>Thanks & Regards</h3>
+                                                        <p>NioM PMO Team powered by Nanotech Soft-App IT Solution</p>
+                                                        <p><span style="font-weight: 550;">Email id </span> - support@nionpmo.com</p>
+                                                        <p><span style="font-weight: 550;">Calendly Link </span> - <a href="https://calendly.com/nanotechsoftapp">https://calendly.com/nanotechsoftapp</a></p>
+                                                        <p><span style="font-weight: 550;">Linkedin </span> - <a href="https://www.linkedin.com/company/nanotech-softapp/">https://www.linkedin.com/company/nanotech-softapp/</a></p>
+                                                        <p><span style="font-weight: 550;">Website </span> - <a href="https://www.nanotech-softapp.com">https://www.nanotech-softapp.com</a></p>
+                                                        <p><span style="font-weight: 550;">New Launch Product </span> - <a href="https://www.niompmo.com">https://www.niompmo.com</a></p>
+                                                `
+                                        );
+                                        sendFilledForm(
+                                                e="marketing@niompmo.com",
+                                                hmsg = "An user has been succeefully registered with our NioM PMO tool with following details",
+                                                rm= "",
+                                                sign=""
+                                        );
+
+                                        // if(url_param.get('d')===undefined){
+                                        //         if( localStorage.getItem("nolic") > 1){
+                                        //                 $('#loading').css({'display':'none'});
+                                        //                 $('#st2').css({"color":"#0bab64"});
+                                        //                 $('#sl2').css({"border":'2px solid #0bab64'});
+                                        //                 $('#sc3').css({"border": '2px solid #0bab64'});
+                                        //                 $('#stt3').css({"color":'#0bab64'});
+                                        //                 $('#st3').css({"color":"#0bab64"});
+                                        //                 $('.modal-sub-heading').empty().text("Please provide your team members email id to inivite them.");
+                                        //                 $('#registerForm').css({'display':'none'});
+                                        //                 $('#inviteForm').css({'display':'flex'});
+                                //                         $(".form-error-msg").empty();
+                                //                         inviteLast = true;
+                                        //         } else{
+                                        //                 $('#loading').css({'display':'none'});
+                                        //                 $('.modal-sub-heading').empty();
+                                        //                 $("#steps").css({"display":"none"});
+                                        //                 $('#registerForm').css({'display':'none'});
+                                        //                 $('#success-msg').css({'display':'flex'});
+                                        //                 sendFilledForm(
+                                        //                         e=userData["Email"],
+                                        //                         hmsg = "You have been successfully registered with our NioM PMO tool with following details :",
+                                        //                         im=0,
+                                        //                         rm= ''
+                                        //                 );
+                                        //                 sendFilledForm(
+                                        //                         e="marketing@niompmo.com",
+                                        //                         hmsg = "An user has been succeefully registered with our NioM PMO tool with following details",
+                                        //                         im=0,
+                                        //                         rm= ''
+                                        //                 );
+                                        //                 lastForm =true;
+                                        //                 localStorage.removeItem('oid');
+                                        //         }
+                                        // }else{
+                                        //         $('#loading').css({'display':'none'});
+                                        //         $('.modal-sub-heading').empty();
+                                        //         $("#steps").css({"display":"none"})
+                                        //         $('#registerForm').css({'display':'none'});
+                                        //         $('#success-msg').css({'display':'flex'});
+                                        //         lastForm =true;
+                                        //         localStorage.removeItem('oid');
+                                        // }
                                 }else{
                                         if(typeof res.data.message == 'string' && res.data.message.includes("User Name")){
                                                 $('.modal-sub-heading').empty().text('Please provide some basic details to register your account.');
@@ -727,7 +783,7 @@ $(document).ready(function(){
                 return false;
         });
 
-        $('#registerForm').find('select[name="country"]').keyup(function(){
+        $('#registerForm').find('select[name="country"]').change(function(){
                 $('#registerForm').find('select[name="country"]').css({'border':'2px solid rgb(0,0,0,0.3) !important'})
         });
 
@@ -748,7 +804,7 @@ $(document).ready(function(){
                 $(".form-error-msg").empty();
         });
 
-        $('#registerForm').find('select[name="role"]').keyup(function(){
+        $('#registerForm').find('select[name="role"]').change(function(){
                 $('#registerForm').find('select[name="role"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
         });
 
@@ -830,7 +886,7 @@ $(document).ready(function(){
                         }
                         axios({
                                 method:'post',
-                                url:"https://production.backend.niompmo.com/account/api/invite/",
+                                url:"https://www.staging.backend.niompmo.com/account/api/invite/",
                                 data: {
                                         organization_id : org_id,
                                         manager_name : iname,

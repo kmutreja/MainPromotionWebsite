@@ -1942,7 +1942,7 @@
                                                                 </div>
                                                                 <div class="flex-column all-form-input"
                                                                         style="align-items: flex-start; justify-content: flex-start; width: 47%;">
-                                                                        <label for="nolic">Required Licenses</label>
+                                                                        <label for="nolic">Required User Licenses</label>
                                                                         <input type="number" name='nolic' id="nolic"
                                                                                 class='of of6'
                                                                                 placeholder="Enter No. of Required Licenses">
@@ -2002,8 +2002,8 @@
                                                                 <div class="flex-column all-form-input"
                                                                         style="align-items: flex-start; justify-content: flex-start; width: 47%;"
                                                                         id="regFf">
-                                                                        <label for="role">Role</label>
-                                                                        <select name="role" id="role" class='rf rf5'>
+                                                                        <label for="role" class="rl">Role</label>
+                                                                        <select name="role" id="role" class='rf rf5 rl'>
                                                                                 <option value="">Select Your Role
                                                                                 </option>
                                                                                 <option value="Sponsor Initiator">
@@ -2023,13 +2023,6 @@
                                                                                 <option
                                                                                         value="Cross-functional Project Manager">
                                                                                         Cross-Functional Project Manager
-                                                                                </option>
-                                                                                <option value="Developer">Developer
-                                                                                </option>
-                                                                                <option value="Designer">Designer
-                                                                                </option>
-                                                                                <option value="Quality Analyst">Quality
-                                                                                        Analyst
                                                                                 </option>
                                                                                 <option value="Team Lead">Team Lead
                                                                                 </option>
@@ -2358,8 +2351,7 @@
                         <div class="modal-main">
                                 <div class="modal-content-box">
                                         <p class="ctext">
-                                                We have sent an verification email to your email id.
-                                                Please verify by clicking the verify button,to visit our website.
+                                                Please click on verification link, which is sent to your email id to visit our website and check NioM Features.
                                         </p>
                                         <p style="width: 100%; text-align: center;" id="cA">
                                                 <span class="cookieA">Ok</span>
@@ -2458,7 +2450,7 @@
                                 var profile = googleUser.getBasicProfile();
                                 axios({
                                         method: 'post',
-                                        url: 'https://production.backend.niompmo.com/account/api/promotion_mail/',
+                                        url: 'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
                                         data: {
                                                 subject: "Visitor",
                                                 to_emails: ["marketing@niompmo.com"],
@@ -2475,7 +2467,7 @@
                                         $(".main-page").show();
                                         axios({
                                                 method: 'post',
-                                                url: 'https://production.backend.niompmo.com/dashboard/api/niom_visitor/',
+                                                url: 'https://www.production.backend.niompmo.com/dashboard/api/niom_visitor/',
                                                 data: {
                                                         email: profile.getEmail()
                                                 }
