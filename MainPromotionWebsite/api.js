@@ -138,7 +138,7 @@ $(document).ready(function(){
                                         <p>Greetings!</p>
                                         <p>Thank you for your visit on <a href="https://www.niompmo.com?vmail=${dataEncrypt(emlLog)}&vc=${dataEncrypt("n!p@i#m$o%o^m&tool")}">NioM PMO website</a>. NioM PMO is one stop solution for all your project management needs.</p>
                                         <br>
-                                        <p>Please click here <a href='https://www.noiompmo.com?vmail=${dataEncrypt(emlLog)}&vc=${dataEncrypt("n!p@i#m$o%o^m&tool")}'>https://www.niompmo.com</a> to verify your email id and follow following steps  to activate your license & start tracking your project.</p>
+                                        <p>Please click here <a href='https://www.niompmo.com?vmail=${dataEncrypt(emlLog)}&vc=${dataEncrypt("n!p@i#m$o%o^m&tool")}'>https://www.niompmo.com</a> to verify your email id and follow following steps  to activate your license & start tracking your project.</p>
                                         <br>
                                         <p><span style="font-weight: 550;">Step 1</span> – On Website, click on Signup Button</p>
                                         <p><span style="font-weight: 550;">Step 2</span> – Fill up your Organization details and other required details.</p>
