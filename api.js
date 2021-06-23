@@ -1,32 +1,32 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
         var url_param = new URLSearchParams(location.search);
 
-        function removeQuotes(q){
+        function removeQuotes(q) {
                 var nq = q
-                for (let i = 0; i <2; i++){
-                        nq = nq.replace(`"`,"")
+                for (let i = 0; i < 2; i++) {
+                        nq = nq.replace(`"`, "")
                 }
                 console.log(nq)
                 return nq;
         }
 
         //AfterLoad
-        function showLandingPage(){
-                setTimeout(function(){
+        function showLandingPage() {
+                setTimeout(function () {
                         $('.main-page').hide();
-                },0);
-                setTimeout(function(){
+                }, 0);
+                setTimeout(function () {
                         $('.main-landing-page').show();
-                },0);
+                }, 0);
         }
 
-        
-        
-                if(Cookies.get('niomvisitor')==undefined && url_param.get("d")==null && url_param.get("vmail")==null &&  url_param.get("vc")==null ){
-                        showLandingPage();
-                }
-        
+
+
+        if (Cookies.get('niomvisitor') == undefined && url_param.get("d") == null && url_param.get("vmail") == null && url_param.get("vc") == null) {
+                //showLandingPage();
+        }
+
         //AfterLoad
 
 
@@ -38,97 +38,97 @@ $(document).ready(function(){
         //Contact Land
 
 
-        var userData ={}
-        
+        var userData = {}
+
         //Modal Box
-        $('a[href="#sign-up"]').click(function(e){
+        $('a[href="#sign-up"]').click(function (e) {
                 e.preventDefault()
-                $('#modal-box').css({'display':'block'});
+                $('#modal-box').css({ 'display': 'block' });
         });
 
-        $('.activate-lic').click(function(e){
+        $('.activate-lic').click(function (e) {
                 e.preventDefault()
-                $('#modal-box').css({'display':'block'});
+                $('#modal-box').css({ 'display': 'block' });
         });
 
 
-        $('.skipBtn').click(function(){
-                $('#loading').css({'display':'flex'})
-                $('#inviteForm').css({'display':'none'}); 
-                $('#st3').css({"color":"#0bab64"})
-                $("#steps").css({"display":'none'})
+        $('.skipBtn').click(function () {
+                $('#loading').css({ 'display': 'flex' })
+                $('#inviteForm').css({ 'display': 'none' });
+                $('#st3').css({ "color": "#0bab64" })
+                $("#steps").css({ "display": 'none' })
                 $('.modal-sub-heading').empty();
-                setTimeout(function(){
-                        $("#loading").css({'display':'none'});
-                        $('#success-msg').css({'display':'flex'});
-                        $("#steps").css({"display":'flex'})
-                }, 2000); 
-                sendFilledForm(e=userData["Email"],hmsg= "You have been successfully registered with our NioM PMO tool with following details :",
-                im=`
+                setTimeout(function () {
+                        $("#loading").css({ 'display': 'none' });
+                        $('#success-msg').css({ 'display': 'flex' });
+                        $("#steps").css({ "display": 'flex' })
+                }, 2000);
+                sendFilledForm(e = userData["Email"], hmsg = "You have been successfully registered with our NioM PMO tool with following details :",
+                        im = `
                         You have not invited your team members till now,please
                         <a href="https://www.app.niompmo.com/">click here</a> to invite your team members.
                         `,
-                rm = ""
-                        );
-                sendFilledForm(e='marketing@niompmo.com',hmsg= "An user has been succeefully registered with our NioM PMO tool with following details",
-                im=`
+                        rm = ""
+                );
+                sendFilledForm(e = 'marketing@niompmo.com', hmsg = "An user has been succeefully registered with our NioM PMO tool with following details",
+                        im = `
                         This user has not invited any team member yet. 
                 `,
-                rm = ""
+                        rm = ""
                 );
                 lastForm = true;
                 inviteLast = false;
                 return false;
         })
 
-        $("#cross-times-landing").click(function(){
-                $('#modal-box-landing').css({'display':'none'});
+        $("#cross-times-landing").click(function () {
+                $('#modal-box-landing').css({ 'display': 'none' });
         });
 
         var lastForm = false;
         var inviteLast = false;
-        $('#cross-times').click(function(){
-                if(lastForm == true){
-                        $('#modal-box').css({'display':'none'});
+        $('#cross-times').click(function () {
+                if (lastForm == true) {
+                        $('#modal-box').css({ 'display': 'none' });
                         pageRedirect('https://www.niompmo.com', 0);
                         lastForm = false;
-                }else if(inviteLast == true){
-                        sendFilledForm(e=userData['Email'],hmsg= "You have been successfully registered with our NioM PMO tool with following details :",
-                        im=`
+                } else if (inviteLast == true) {
+                        sendFilledForm(e = userData['Email'], hmsg = "You have been successfully registered with our NioM PMO tool with following details :",
+                                im = `
                                 You have not invited your team members till now,please
                                 <a href="https://www.app.niompmo.com/">click here</a> to invite your team members.
                                 `,
-                        rm = ""
-                                );
-                        sendFilledForm(e='marketing@niompmo.com',hmsg= "An user has been succeefully registered with our NioM PMO tool with following details",
-                        im=`
+                                rm = ""
+                        );
+                        sendFilledForm(e = 'marketing@niompmo.com', hmsg = "An user has been succeefully registered with our NioM PMO tool with following details",
+                                im = `
                                 This user has not invited any team member yet. 
                         `,
-                        rm = ""
+                                rm = ""
                         );
-                        $('#modal-box').css({'display':'none'});
+                        $('#modal-box').css({ 'display': 'none' });
                         pageRedirect('https://www.niompmo.com', 0);
                 }
                 else {
-                        $('#modal-box').css({'display':'none'});
+                        $('#modal-box').css({ 'display': 'none' });
                 }
         });
         //Modal Box
 
         //LandingForm
-        
-        $("#landingForm").submit(function(e){
+
+        $("#landingForm").submit(function (e) {
                 $('.main-landing-page').hide();
-                $('#outerLogo').css({'display':'block'});  
+                $('#outerLogo').css({ 'display': 'block' });
                 emlLog = $('#landingForm').find('input[name="emailLog"]').val();
-                
+
                 axios({
-                        method:'post',
-                        url:'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
-                        data:  {
+                        method: 'post',
+                        url: 'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
+                        data: {
                                 subject: "Warm Welcome from NioM PMO Team - Your one stop solution for project management needs.",
                                 to_emails: [`${emlLog}`],
-                                body : `
+                                body: `
                                 <body>
                                 <div style="display: block; width: 100%; border: 1px solid greenyellow; margin: 20px auto; padding: 1%;">
                                         <div style="width: 100%; display: block;">
@@ -158,43 +158,43 @@ $(document).ready(function(){
                                 </div>
                             </body>
                                         `,
-                        }       
-                }).then(()=>{
-                        setTimeout(function(){
-                                $('#outerLogo').css({'display':'none'}); 
-                                
-                        },1000);
-                        setTimeout(function(){
+                        }
+                }).then(() => {
+                        setTimeout(function () {
+                                $('#outerLogo').css({ 'display': 'none' });
+
+                        }, 1000);
+                        setTimeout(function () {
                                 $('.main-landing-page').show();
-                        },1000);
-                        setTimeout(function(){
+                        }, 1000);
+                        setTimeout(function () {
                                 $("#cookieModal").show();
-                        },500)
+                        }, 500)
                 });
                 return false;
         });
 
-        $('.cookieA').click(function(){
+        $('.cookieA').click(function () {
                 $('.lp-modal').hide();
         });
 
-        setTimeout(function(){
+        setTimeout(function () {
                 $('#noteModal').show();
-        },5000);
+        }, 5000);
 
-        $('.landing-pg-btn').click(function(){
+        $('.landing-pg-btn').click(function () {
                 $("#noteModal").show();
         })
         //LandingForm
 
 
         //DataMail
-        function sendFilledForm(e,hmsg,rm,sign){
+        function sendFilledForm(e, hmsg, rm, sign) {
                 axios({
                         method: 'post',
                         url: 'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
                         data: {
-                                subject:'Successfull Registration Confirmation with NioM PMO' ,
+                                subject: 'Successfull Registration Confirmation with NioM PMO',
                                 to_emails: [e],
                                 body: `
                                 <body>
@@ -238,9 +238,9 @@ $(document).ready(function(){
         //         localStorage.setItem('oid',getData(decrypt).id);
         // }
 
-        if(url_param.get("vmail") && url_param.get("vc")){
-                var decryptmail = decryptData (decodeURIComponent(url_param.get('vmail')));
-                var decryptcookie = decryptData (decodeURIComponent(url_param.get('vc')));
+        if (url_param.get("vmail") && url_param.get("vc")) {
+                var decryptmail = decryptData(decodeURIComponent(url_param.get('vmail')));
+                var decryptcookie = decryptData(decodeURIComponent(url_param.get('vc')));
                 $('#orgForm').find('input[name="email"]').val(removeQuotes(decryptmail));
                 Cookies.set('niomvisitor', removeQuotes(decryptcookie), { expiry: 3600 * 24 * 365 });
                 axios({
@@ -249,7 +249,7 @@ $(document).ready(function(){
                         data: {
                                 email: removeQuotes(decryptmail),
                         }
-                }).then(()=>{
+                }).then(() => {
                         axios({
                                 method: 'post',
                                 url: 'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
@@ -269,87 +269,87 @@ $(document).ready(function(){
         //Team Mate Registration
 
         //GetStarted
-        $('.banner-service-btn').click(function(){
+        $('.banner-service-btn').click(function () {
                 var ec = 0;
-                if ($('#email-ip').val() == ''){
+                if ($('#email-ip').val() == '') {
                         $('#email-ip').removeClass().addClass('get-started-input-1');
-                        ec=ec + 1;
-                } 
-
-                if($('#email-ip').val() !='' && !$('#email-ip').val().match(/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/)){
-                        $('.gep').empty().text("Please enter correct email !");
-                        $('#email-ip').removeClass().addClass('get-started-input-1');
-                        ec =ec+1;
+                        ec = ec + 1;
                 }
 
-                if(ec == 0){
-                        window.location.href=`./signup.html?ved=${dataEncrypt(`6and${$('#email-ip').val()}`)}`;
-                 }
+                if ($('#email-ip').val() != '' && !$('#email-ip').val().match(/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/)) {
+                        $('.gep').empty().text("Please enter correct email !");
+                        $('#email-ip').removeClass().addClass('get-started-input-1');
+                        ec = ec + 1;
+                }
+
+                if (ec == 0) {
+                        window.location.href = `./signup.html?ved=${dataEncrypt(`6and${$('#email-ip').val()}`)}`;
+                }
                 return false;
         })
 
-        $('#email-ip').keyup(function(){         
+        $('#email-ip').keyup(function () {
                 $('.gep').empty();
                 $('#email-ip').removeClass().addClass('get-started-input');
         })
         //GetStarted
 
         //Page Redirection
-        function pageRedirect(url,t){
-                setTimeout(function(){ window.location = url; }, t);
+        function pageRedirect(url, t) {
+                setTimeout(function () { window.location = url; }, t);
                 localStorage.removeItem('oid');
         }
         //Page Redirection
 
         //URL Encryption/Decryption
-        function dataEncrypt(data){
+        function dataEncrypt(data) {
                 var secret = "NioM123";
                 var encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), secret);
                 return encodeURIComponent(encrypted);
         }
 
-        function decryptData (data){
+        function decryptData(data) {
                 var secret = "NioM123";
                 var d = CryptoJS.AES.decrypt(data.toString(), secret).toString(CryptoJS.enc.Utf8);
                 return d;
         }
 
-        function getData(data){
-                var oid = "" 
+        function getData(data) {
+                var oid = ""
                 var e = ""
                 var ai = data.indexOf("a");
                 var di = data.indexOf("d");
-                for(let j = 1; j < data.length-1; j++){
-                        if(j < ai){
-                                oid = oid+data[j]
-                        }else if(j > di){
+                for (let j = 1; j < data.length - 1; j++) {
+                        if (j < ai) {
+                                oid = oid + data[j]
+                        } else if (j > di) {
                                 e = e + data[j]
                         }
                 }
-                return {id:oid,email:e}
-        }       
+                return { id: oid, email: e }
+        }
         //URL Encryption/Decryption
 
         //Whatsapp Pannel Show
-        $(".whatsapp-widget").click(function(){
-                $('.whatsapp-panel').css({'display':'block'})
+        $(".whatsapp-widget").click(function () {
+                $('.whatsapp-panel').css({ 'display': 'block' })
         })
 
-        $("#cross-w").click(function(){
-                $('.whatsapp-panel').css({'display':'none'})
+        $("#cross-w").click(function () {
+                $('.whatsapp-panel').css({ 'display': 'none' })
         })
         //Whatsapp Pannel Show
 
         //Form Creation
-        createDropDown('rf rf6','#regFf')
+        createDropDown('rf rf6', '#regFf')
 
         var licIp = 0
         function createForm(d) {
                 licIp = d
-                if(d <= 5 ){
-                        for(let i = 1; i < d ; i++){
+                if (d <= 5) {
+                        for (let i = 1; i < d; i++) {
                                 $(
-                                `
+                                        `
                                 <div class="flex-column all-form-input"style="align-items: flex-start; justify-content: flex-start; width: 80%;">
                                         <label for="email${i}">Team Mate ${i}</label>
                                         <input type="text" name='email${i}' id="email${i}" placeholder='Enter Email of Team Mate ${i}' class='invite'>
@@ -358,12 +358,12 @@ $(document).ready(function(){
                                 ).insertBefore('#inlst');
                         }
                 } else {
-                        $('.modal-content-box').css({'width':'50%'});
-                        $('#frmLarge').css({'display':'flex'});
-                        for(let i = 1; i < d ; i++){
+                        $('.modal-content-box').css({ 'width': '50%' });
+                        $('#frmLarge').css({ 'display': 'flex' });
+                        for (let i = 1; i < d; i++) {
 
                                 $(
-                                `
+                                        `
                                 <div class="flex-column all-form-input"style="align-items: flex-start; justify-content: flex-start; width: 47%;">
                                         <label for="email${i}">Team Mate ${i}</label>
                                         <input type="text" name='email${i}' id="email${i}" placeholder='Enter Email of Team Mate ${i}' class='invite'>
@@ -475,7 +475,7 @@ $(document).ready(function(){
                 return false;
         });*/
 
-        $('#orgForm').submit(function(e){
+        $('#orgForm').submit(function (e) {
 
                 var licArr = [];
                 var org_name = $('#orgForm').find('input[name ="org_name"]').val();
@@ -486,24 +486,24 @@ $(document).ready(function(){
                 var nolic = $('#orgForm').find('input[name="nolic"]').val();
 
                 var errorCount = 0
-                $('.of').each(function(index){
-                        if($(`.of${index+1}`).val() == ''){
+                $('.of').each(function (index) {
+                        if ($(`.of${index + 1}`).val() == '') {
                                 e.preventDefault();
-                                $(`.of${index+1}`).css({'border':'2px solid red'});
+                                $(`.of${index + 1}`).css({ 'border': '2px solid red' });
                                 errorCount = errorCount + 1;
                                 return false;
                         }
                 });
 
-                if(eml != '' && !eml.match(/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/)){
+                if (eml != '' && !eml.match(/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/)) {
                         e.preventDefault();
-                        $('#orgForm').find('input[name="emailL"]').css({'border':'2px solid red'});
+                        $('#orgForm').find('input[name="emailL"]').css({ 'border': '2px solid red' });
                         $('.form-error-msg').empty();
                         $('.form-error-msg').text('Email is incorrect ! ');
                         return false;
                 }
 
-                if (errorCount == 0){
+                if (errorCount == 0) {
 
                         userData["Email"] = eml;
                         userData["Organization Name"] = org_name;
@@ -511,52 +511,52 @@ $(document).ready(function(){
                         userData["Address"] = address;
                         userData["No of Licenses"] = nolic;
 
-                        for(let i = 0; i <  nolic; i++){
-                                if(i==0){
-                                        licArr.push({'email':`${eml}`,'admin_name':`${name}`});
-                                }else {
-                                        licArr.push({'admin_name':`${name}`});
+                        for (let i = 0; i < nolic; i++) {
+                                if (i == 0) {
+                                        licArr.push({ 'email': `${eml}`, 'admin_name': `${name}` });
+                                } else {
+                                        licArr.push({ 'admin_name': `${name}` });
                                 }
                         }
-                        localStorage.setItem('comp-name',businessdiv);
-                        
+                        localStorage.setItem('comp-name', businessdiv);
+
                         $('.modal-sub-heading').empty();
-                        $("#steps").css({"display":"none"})
-                        $('#orgForm').css({'display':'none'});
-                        $('#loading').css({'display':'flex'});  
+                        $("#steps").css({ "display": "none" })
+                        $('#orgForm').css({ 'display': 'none' });
+                        $('#loading').css({ 'display': 'flex' });
 
                         axios({
-                                method:'post',
-                                url:'https://www.production.backend.niompmo.com/account/api/license/',
-                                data:  {
-                                        org_data :{
-                                                parent_name :`${org_name}`,
-                                                name : `${businessdiv}`,
-                                                location : `${address}`,
+                                method: 'post',
+                                url: 'https://www.production.backend.niompmo.com/account/api/license/',
+                                data: {
+                                        org_data: {
+                                                parent_name: `${org_name}`,
+                                                name: `${businessdiv}`,
+                                                location: `${address}`,
                                         },
-                                        lic_data : licArr
+                                        lic_data: licArr
                                 }
                         }).then((res) => {
-                                if(res.data.status == true){
-                                        $('#loading').css({'display':'none'});
-                                        $('#registerForm').css({'display':'flex'})
+                                if (res.data.status == true) {
+                                        $('#loading').css({ 'display': 'none' });
+                                        $('#registerForm').css({ 'display': 'flex' })
                                         $('.modal-sub-heading').empty().text('Please provide some basic details to register your account.');
                                         $('#registerForm').find('input[name="email"]').val(licArr[0].email);
-                                        $("#steps").css({"display":"flex"})
+                                        $("#steps").css({ "display": "flex" })
                                         $('.form-error-msg').empty();
-                                        $('#st1').css({"color":"#0bab64"})
-                                        $('#sl1').css({"border":'2px solid #0bab64'})
-                                        $('#sc2').css({"border": '2px solid #0bab64'})
-                                        $('#stt2').css({"color":'#0bab64'})
-                                        localStorage.setItem('oid',res.data.data.organization_id);
-                                        localStorage.setItem('nolic',nolic);
+                                        $('#st1').css({ "color": "#0bab64" })
+                                        $('#sl1').css({ "border": '2px solid #0bab64' })
+                                        $('#sc2').css({ "border": '2px solid #0bab64' })
+                                        $('#stt2').css({ "color": '#0bab64' })
+                                        localStorage.setItem('oid', res.data.data.organization_id);
+                                        localStorage.setItem('nolic', nolic);
                                         createForm(nolic);
-                                }else{
-                                        $('#loading').css({'display':'none'});
-                                        $("#orgForm").css({'display':'flex'});
-                                        $("#steps").css({"display":"flex"})
+                                } else {
+                                        $('#loading').css({ 'display': 'none' });
+                                        $("#orgForm").css({ 'display': 'flex' });
+                                        $("#steps").css({ "display": "flex" })
                                         $('.modal-sub-heading').empty().text('Please provide some Organization details.');
-                                        $('#orgForm').find('input[name="email"]').css({'border':'2px solid red'});
+                                        $('#orgForm').find('input[name="email"]').css({ 'border': '2px solid red' });
                                         $('.form-error-msg').empty();
                                         $('.form-error-msg').text('Email already exists ! ');
 
@@ -566,38 +566,38 @@ $(document).ready(function(){
                 return false;
         });
 
-        $('#orgForm').find('input[name ="org_name"]').keyup(function(){
-                $('#orgForm').find('input[name ="org_name"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#orgForm').find('input[name ="org_name"]').keyup(function () {
+                $('#orgForm').find('input[name ="org_name"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
 
-        $('#orgForm').find('input[name ="business_div"]').keyup(function(){
-                $('#orgForm').find('input[name ="business_div"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#orgForm').find('input[name ="business_div"]').keyup(function () {
+                $('#orgForm').find('input[name ="business_div"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
 
-        $('#orgForm').find('input[name ="name"]').keyup(function(){
-                $('#orgForm').find('input[name ="name"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#orgForm').find('input[name ="name"]').keyup(function () {
+                $('#orgForm').find('input[name ="name"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
 
-        $('#orgForm').find('input[name ="email"]').keyup(function(){
-                $('#orgForm').find('input[name ="email"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#orgForm').find('input[name ="email"]').keyup(function () {
+                $('#orgForm').find('input[name ="email"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
                 $('.form-error-msg').empty();
         });
 
-        $('#orgForm').find('input[name ="location"]').keyup(function(){
-                $('#orgForm').find('input[name ="location"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#orgForm').find('input[name ="location"]').keyup(function () {
+                $('#orgForm').find('input[name ="location"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
 
-        $('#orgForm').find('input[name ="nolic"]').keyup(function(){
-                $('#orgForm').find('input[name ="nolic"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#orgForm').find('input[name ="nolic"]').keyup(function () {
+                $('#orgForm').find('input[name ="nolic"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
 
-        $('#registerForm').submit(function(e){
+        $('#registerForm').submit(function (e) {
 
                 var fname = $('#registerForm').find('input[name="fname"]').val();
                 var lname = $('#registerForm').find('input[name="lname"]').val();
                 var eml = $('#registerForm').find('input[name="email"]').val();
                 var uname = $('#registerForm').find('input[name="username"]').val();
-                if(url_param.get('d') === undefined){
+                if (url_param.get('d') === undefined) {
                         var role = $('#registerForm').find('select[name="role"]').val();
                 }
                 var role = $('#registerForm').find('select[name="role"]').val();
@@ -606,95 +606,95 @@ $(document).ready(function(){
                 var pass2 = $('#registerForm').find('input[name="pass2"]').val();
 
                 var errorCount = 0;
-                        
-                $('.rf').each(function(index){
-                        if($(`.rf${index+1}`).val() == '' ){
+
+                $('.rf').each(function (index) {
+                        if ($(`.rf${index + 1}`).val() == '') {
                                 e.preventDefault();
-                                $(`.rf${index+1}`).css({'border':'2px solid red'});
+                                $(`.rf${index + 1}`).css({ 'border': '2px solid red' });
                                 errorCount = errorCount + 1;
                                 return false;
-                        }else {
-                                $(`.rf${index+1}`).css({'border':'2px solid rgb(0,0,0,0.3)'});
+                        } else {
+                                $(`.rf${index + 1}`).css({ 'border': '2px solid rgb(0,0,0,0.3)' });
                         }
                 });
 
-                if( pass1!= '' && (pass1.length < 8 || pass1.length > 15)){
+                if (pass1 != '' && (pass1.length < 8 || pass1.length > 15)) {
                         e.preventDefault();
                         errorCount = errorCount + 1;
-                        $('#registerForm').find('input[name="pass1"]').css({'border':'2px solid red'})
+                        $('#registerForm').find('input[name="pass1"]').css({ 'border': '2px solid red' })
                         $(".form-error-msg").empty().text("Password length should be minimum 8  and maximum 15 characters");
                         return false;
-                }else if( pass1!= '' && !pass1.match(/[a-z]+/g)){
+                } else if (pass1 != '' && !pass1.match(/[a-z]+/g)) {
                         e.preventDefault()
                         errorCount = errorCount + 1;
-                        $('#registerForm').find('input[name="pass1"]').css({'border':'2px solid red'})
+                        $('#registerForm').find('input[name="pass1"]').css({ 'border': '2px solid red' })
                         $(".form-error-msg").empty().text("Password should contain letters");
                         return false;
-                }else {
+                } else {
                         $(".form-error-msg").empty();
                 }
 
-                
-                if( pass2 != '' && pass1 != pass2){
+
+                if (pass2 != '' && pass1 != pass2) {
                         e.preventDefault()
-                        $('#registerForm').find("input[name='pass2']").css({'border':'2px solid red'})
-                        $('#registerForm').find("input[name='pass1']").css({'border':'2px solid red'})
+                        $('#registerForm').find("input[name='pass2']").css({ 'border': '2px solid red' })
+                        $('#registerForm').find("input[name='pass1']").css({ 'border': '2px solid red' })
                         $(".form-error-msg").text("Password dose't match !");
                         return false;
                 }
-                
-                
-                if(errorCount == 0){
+
+
+                if (errorCount == 0) {
 
                         userData["Name"] = `${fname} ${lname}`;
                         userData["Username"] = uname;
                         userData["Country"] = country;
                         userData["Role"] = role;
                         console.log(role);
-                        localStorage.setItem('inviter-name',`${fname} ${lname}`);
-                        $('.np-row').css({'display':'none'})
+                        localStorage.setItem('inviter-name', `${fname} ${lname}`);
+                        $('.np-row').css({ 'display': 'none' })
                         $('.modal-sub-heading').empty();
-                        $("#steps").css({"display":"none"})
-                        $('#registerForm').css({'display':'none'});
-                        $('#loading').css({'display':'flex'});
+                        $("#steps").css({ "display": "none" })
+                        $('#registerForm').css({ 'display': 'none' });
+                        $('#loading').css({ 'display': 'flex' });
 
                         axios({
-                                method:'post',
-                                url:'https://www.production.backend.niompmo.com/account/api/register/',
+                                method: 'post',
+                                url: 'https://www.production.backend.niompmo.com/account/api/register/',
                                 data: {
-                                        first_name : `${fname}`,
-                                        last_name : `${lname}`,
-                                        email : `${eml}`,
-                                        country : `${country}`,
-                                        role : `${role}`,
-                                        organization_id : localStorage.getItem('oid'),
-                                        password : `${pass1}`,
-                                        username : `${uname}`,
-                                        is_management : is_management,
+                                        first_name: `${fname}`,
+                                        last_name: `${lname}`,
+                                        email: `${eml}`,
+                                        country: `${country}`,
+                                        role: `${role}`,
+                                        organization_id: localStorage.getItem('oid'),
+                                        password: `${pass1}`,
+                                        username: `${uname}`,
+                                        is_management: is_management,
                                 },
                         }).then((res) => {
-                                if(res.data.status == true){
-                                        $('#loading').css({'display':'none'});
-                                        $('#st2').css({"color":"#0bab64"});
-                                        $('#sl2').css({"border":'2px solid #0bab64'});
-                                        $('#sc3').css({"border": '2px solid #0bab64'});
-                                        $('#stt3').css({"color":'#0bab64'});
-                                        $('#st3').css({"color":"#0bab64"});
+                                if (res.data.status == true) {
+                                        $('#loading').css({ 'display': 'none' });
+                                        $('#st2').css({ "color": "#0bab64" });
+                                        $('#sl2').css({ "border": '2px solid #0bab64' });
+                                        $('#sc3').css({ "border": '2px solid #0bab64' });
+                                        $('#stt3').css({ "color": '#0bab64' });
+                                        $('#st3').css({ "color": "#0bab64" });
                                         $('.modal-sub-heading').empty().text("Please provide your team members email id to inivite them.");
-                                        $('#registerForm').css({'display':'none'});
-                                        $('#success-msg').css({'display':'flex'});
+                                        $('#registerForm').css({ 'display': 'none' });
+                                        $('#success-msg').css({ 'display': 'flex' });
                                         $(".form-error-msg").empty();
-                                        lastForm =true;
+                                        lastForm = true;
                                         localStorage.removeItem('oid');
-                                        rmsg="Kindly, login to <a href='https://www.app.niompmo.com'>NioM PMO</a>"
-                                        if (is_management){
+                                        rmsg = "Kindly, login to <a href='https://www.app.niompmo.com'>NioM PMO</a>"
+                                        if (is_management) {
                                                 rmsg = "Kindly, login to <a href='https://www.app.niompmo.com'>NioM PMO</a> and nvite your teammates."
                                         }
                                         sendFilledForm(
-                                                e=eml,
+                                                e = eml,
                                                 hmsg = "You have been successfully registered with our NioM PMO tool with following details :",
-                                                rm= rmsg,
-                                                sign=`
+                                                rm = rmsg,
+                                                sign = `
                                                         <h3>Thanks & Regards</h3>
                                                         <p>NioM PMO Team powered by Nanotech Soft-App IT Solution</p>
                                                         <p><span style="font-weight: 550;">Email id </span> - support@nionpmo.com</p>
@@ -705,10 +705,10 @@ $(document).ready(function(){
                                                 `
                                         );
                                         sendFilledForm(
-                                                e="marketing@niompmo.com",
+                                                e = "marketing@niompmo.com",
                                                 hmsg = "An user has been succeefully registered with our NioM PMO tool with following details",
-                                                rm= "",
-                                                sign=""
+                                                rm = "",
+                                                sign = ""
                                         );
 
                                         // if(url_param.get('d')===undefined){
@@ -722,8 +722,8 @@ $(document).ready(function(){
                                         //                 $('.modal-sub-heading').empty().text("Please provide your team members email id to inivite them.");
                                         //                 $('#registerForm').css({'display':'none'});
                                         //                 $('#inviteForm').css({'display':'flex'});
-                                //                         $(".form-error-msg").empty();
-                                //                         inviteLast = true;
+                                        //                         $(".form-error-msg").empty();
+                                        //                         inviteLast = true;
                                         //         } else{
                                         //                 $('#loading').css({'display':'none'});
                                         //                 $('.modal-sub-heading').empty();
@@ -754,25 +754,25 @@ $(document).ready(function(){
                                         //         lastForm =true;
                                         //         localStorage.removeItem('oid');
                                         // }
-                                }else{
-                                        if(typeof res.data.message == 'string' && res.data.message.includes("User Name")){
+                                } else {
+                                        if (typeof res.data.message == 'string' && res.data.message.includes("User Name")) {
                                                 $('.modal-sub-heading').empty().text('Please provide some basic details to register your account.');
-                                                $('#loading').css({'display':'none'});
-                                                $('#registerForm').css({'display':'flex'});
+                                                $('#loading').css({ 'display': 'none' });
+                                                $('#registerForm').css({ 'display': 'flex' });
                                                 $(".form-error-msg").text("Username already taken !");
-                                                $('#registerForm').find('input[name="username"]').css({'border':'2px solid red'});
-                                                if( !`${$(location).attr('href')}`.includes("?")){
-                                                        $("#steps").css({"display":"flex"})
+                                                $('#registerForm').find('input[name="username"]').css({ 'border': '2px solid red' });
+                                                if (!`${$(location).attr('href')}`.includes("?")) {
+                                                        $("#steps").css({ "display": "flex" })
                                                 }
-                                        }else{
+                                        } else {
                                                 $('.modal-sub-heading').empty().text('Please provide some basic details to register your account.');
-                                                $('#loading').css({'display':'none'});
-                                                if( !`${$(location).attr('href')}`.includes("?")){
-                                                        $("#steps").css({"display":"flex"})
+                                                $('#loading').css({ 'display': 'none' });
+                                                if (!`${$(location).attr('href')}`.includes("?")) {
+                                                        $("#steps").css({ "display": "flex" })
                                                 }
-                                                $('#registerForm').css({'display':'flex'});
+                                                $('#registerForm').css({ 'display': 'flex' });
                                                 $(".form-error-msg").text("You are already registered !");
-                                                $('#registerForm').find('input[name="email"]').css({'border':'2px solid red'});
+                                                $('#registerForm').find('input[name="email"]').css({ 'border': '2px solid red' });
                                                 lastForm = true;
                                         }
                                 }
@@ -782,174 +782,174 @@ $(document).ready(function(){
                 return false;
         });
 
-        $('#registerForm').find('select[name="country"]').change(function(){
-                $('#registerForm').find('select[name="country"]').css({'border':'2px solid rgb(0,0,0,0.3) !important'})
+        $('#registerForm').find('select[name="country"]').change(function () {
+                $('#registerForm').find('select[name="country"]').css({ 'border': '2px solid rgb(0,0,0,0.3) !important' })
         });
 
-        $('#registerForm').find('input[name="fname"]').keyup(function(){
-                $('#registerForm').find('input[name="fname"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#registerForm').find('input[name="fname"]').keyup(function () {
+                $('#registerForm').find('input[name="fname"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
 
-        $('#registerForm').find('input[name="lname"]').keyup(function(){
-                $('#registerForm').find('input[name="lname"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#registerForm').find('input[name="lname"]').keyup(function () {
+                $('#registerForm').find('input[name="lname"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
 
-        $('#registerForm').find('input[name="email"]').keyup(function(){
-                $('#registerForm').find('input[name="email"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#registerForm').find('input[name="email"]').keyup(function () {
+                $('#registerForm').find('input[name="email"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
 
-        $('#registerForm').find('input[name="username"]').keyup(function(){
-                $('#registerForm').find('input[name="username"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#registerForm').find('input[name="username"]').keyup(function () {
+                $('#registerForm').find('input[name="username"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
                 $(".form-error-msg").empty();
         });
 
-        $('#registerForm').find('select[name="role"]').change(function(){
-                $('#registerForm').find('select[name="role"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#registerForm').find('select[name="role"]').change(function () {
+                $('#registerForm').find('select[name="role"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
 
-        $('#registerForm').find('input[name="pass1"]').keyup(function(){
-                $('#registerForm').find('input[name="pass1"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#registerForm').find('input[name="pass1"]').keyup(function () {
+                $('#registerForm').find('input[name="pass1"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
                 $(".form-error-msg").empty();
         });
 
-        $('#registerForm').find('input[name="pass2"]').keyup(function(){
-                $('#registerForm').find('input[name="pass2"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
-                $('#registerForm').find('input[name="pass1"]').css({'border':'2px solid rgb(0,0,0,0.3)'})
+        $('#registerForm').find('input[name="pass2"]').keyup(function () {
+                $('#registerForm').find('input[name="pass2"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
+                $('#registerForm').find('input[name="pass1"]').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
                 $(".form-error-msg").empty();
         });
 
-        $('#inviteForm').submit(function(e){
+        $('#inviteForm').submit(function (e) {
 
-                var errorCount =0;
+                var errorCount = 0;
                 var emptyCount = 0;
-                $('.invite').each(function(index){
-                        if($(`#email${index+1}`).val() == ''){
+                $('.invite').each(function (index) {
+                        if ($(`#email${index + 1}`).val() == '') {
                                 emptyCount = emptyCount + 1;
                         }
                 });
 
-                $('.invite').each(function(index){
-                        if($(`#email${index+1}`).val() != '' &&  !$(`#email${index+1}`).val().match(/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/)){
+                $('.invite').each(function (index) {
+                        if ($(`#email${index + 1}`).val() != '' && !$(`#email${index + 1}`).val().match(/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/)) {
                                 e.preventDefault();
-                                $('#loading').css({'display':'none'});
-                                $('#inviteForm').css({'display':'flex'});
-                                $(`#email${index+1}`).css({'border':'2px solid red'});
+                                $('#loading').css({ 'display': 'none' });
+                                $('#inviteForm').css({ 'display': 'flex' });
+                                $(`#email${index + 1}`).css({ 'border': '2px solid red' });
                                 $('.form-error-msg').text('Incorrect Email !');
                                 errorCount = errorCount + 1;
                                 emptyCount = emptyCount + 1;
                                 return false;
-                        }else if(emptyCount == (userData["No of Licenses"]-1)){
+                        } else if (emptyCount == (userData["No of Licenses"] - 1)) {
                                 e.preventDefault();
-                                $(`.invite`).css({'border':'2px solid red'});
+                                $(`.invite`).css({ 'border': '2px solid red' });
                                 $('.form-error-msg').empty();
                                 errorCount = errorCount + 1;
                                 return false;
-                        }else{
+                        } else {
                                 $('.form-error-msg').empty();
-                                $(`#email${index+1}`).css({'border':'2px solid rgb(0,0,0,0.3)'})
+                                $(`#email${index + 1}`).css({ 'border': '2px solid rgb(0,0,0,0.3)' })
                         }
 
                 });
 
-                if(errorCount == 0){
+                if (errorCount == 0) {
                         $('.modal-sub-heading').empty();
-                        $("#steps").css({"display":"none"})
-                        $('#inviteForm').css({'display':'none'});
-                        $('#loading').css({'display':'flex'});
-                        var  org_id = localStorage.getItem('oid');
+                        $("#steps").css({ "display": "none" })
+                        $('#inviteForm').css({ 'display': 'none' });
+                        $('#loading').css({ 'display': 'flex' });
+                        var org_id = localStorage.getItem('oid');
                         var iname = localStorage.getItem('inviter-name');
                         userData["Invited Mails"] = [];
                         var team_data = [];
-                        $('.invite').each(function(index){
-                                if($(`#email${index+1}`).val() != ""){
-                                        userData["Invited Mails"].push( $(`#email${index+1}`).val());
-                                        var getEml = $(`#email${index+1}`).val();
+                        $('.invite').each(function (index) {
+                                if ($(`#email${index + 1}`).val() != "") {
+                                        userData["Invited Mails"].push($(`#email${index + 1}`).val());
+                                        var getEml = $(`#email${index + 1}`).val();
                                         var d = `${org_id}and${getEml}`
                                         data = dataEncrypt(`${d}`);
                                         var lnk = `https://www.niompmo.com?d=${data}`
                                         team_data.push({
-                                                email : getEml,
-                                                link_text : lnk,
+                                                email: getEml,
+                                                link_text: lnk,
                                         });
                                 }
                         });
                         var rmsg = ''
                         var rmsg2 = ""
-                        if(userData['Invited Mails'].length < (localStorage.getItem('nolic') -1)){
-                                rmsg = `You have requested ${localStorage.getItem('nolic')} licenses in which 1 license for you and ${localStorage.getItem('nolic') - 1}license(s) for your teammate(s) but you invite only ${localStorage.getItem('nolic') - userData['Invited Mails'].length -1} teammate(s).<br>
+                        if (userData['Invited Mails'].length < (localStorage.getItem('nolic') - 1)) {
+                                rmsg = `You have requested ${localStorage.getItem('nolic')} licenses in which 1 license for you and ${localStorage.getItem('nolic') - 1}license(s) for your teammate(s) but you invite only ${localStorage.getItem('nolic') - userData['Invited Mails'].length - 1} teammate(s).<br>
                                         If you want to invite remaining teammate(s) ,please <a href="https://www.app.niompmo.com/">click here</a> 
                                 `
-                                rmsg2  = `
+                                rmsg2 = `
                                         This user has requested ${localStorage.getItem('nolic')} license in which 1 for the user and ${localStorage.getItem('nolic') - 1}license(s) for his/her teammate(s) but he/she invites ${localStorage.getItem('nolic') - userData['Invited Mails'].length - 1} teammates(s).
-                                ` 
+                                `
                         }
                         axios({
-                                method:'post',
-                                url:"https://www.staging.backend.niompmo.com/account/api/invite/",
+                                method: 'post',
+                                url: "https://www.staging.backend.niompmo.com/account/api/invite/",
                                 data: {
-                                        organization_id : org_id,
-                                        manager_name : iname,
-                                        team_data : team_data,
+                                        organization_id: org_id,
+                                        manager_name: iname,
+                                        team_data: team_data,
                                 },
-                        }).then((res)=>{
-                                if(res.data.status == true){
-                                        $('#loading').css({'display':'none'});
+                        }).then((res) => {
+                                if (res.data.status == true) {
+                                        $('#loading').css({ 'display': 'none' });
                                         $('.modal-sub-heading').empty();
                                         $('.form-error-msg').empty();
-                                        $("#steps").css({"display":"flex"})
-                                        $('#success-msg').css({'display':'flex'});
-                                        $('#st3').css({"color":"#0bab64"})
+                                        $("#steps").css({ "display": "flex" })
+                                        $('#success-msg').css({ 'display': 'flex' });
+                                        $('#st3').css({ "color": "#0bab64" })
                                         sendFilledForm(
-                                                e=userData["Email"],
+                                                e = userData["Email"],
                                                 hmsg = "You have been successfully registered with our NioM PMO tool with following details :",
-                                                im=userData["Invited Mails"],
-                                                rm= rmsg
+                                                im = userData["Invited Mails"],
+                                                rm = rmsg
                                         );
                                         sendFilledForm(
-                                                e="marketing@niompmo.com",
+                                                e = "marketing@niompmo.com",
                                                 hmsg = "An user has been succeefully registered with our NioM PMO tool with following details",
-                                                im=userData["Invited Mails"],
-                                                rm= rmsg2
+                                                im = userData["Invited Mails"],
+                                                rm = rmsg2
                                         );
                                         lastForm = true;
                                         localStorage.removeItem('oid');
                                         localStorage.removeItem('inviter-name');
-                                        inviteLast =false;
+                                        inviteLast = false;
                                 } else {
-                                        $('#loading').css({'display':'none'});
-                                        $("#steps").css({"display":"flex"})
-                                        $('#inviteForm').css({'display':'flex'});
+                                        $('#loading').css({ 'display': 'none' });
+                                        $("#steps").css({ "display": "flex" })
+                                        $('#inviteForm').css({ 'display': 'flex' });
                                         $('.modal-sub-heading').empty().text("Please provide your team members email id to inivite them.")
                                         var eec = 0
-                                        for(let i=0; i < res.data.data.length; i++){
-                                                $('.invite').each(function(index){
-                                                        if($(`#email${index+1}`).val() == res.data.data[i]){
-                                                                $(`#email${index+1}`).css({"border":'2px solid red'});
-                                                                eec = eec +1
+                                        for (let i = 0; i < res.data.data.length; i++) {
+                                                $('.invite').each(function (index) {
+                                                        if ($(`#email${index + 1}`).val() == res.data.data[i]) {
+                                                                $(`#email${index + 1}`).css({ "border": '2px solid red' });
+                                                                eec = eec + 1
                                                         }
                                                 });
                                         }
-                                        if(eec == 1){
+                                        if (eec == 1) {
                                                 $('.form-error-msg').empty().text("This email is already registered !");
-                                                
-                                        } else if(eec > 1){
+
+                                        } else if (eec > 1) {
                                                 $('.form-error-msg').empty().text("These emails are already registered !");
                                         }
                                 }
                         });
                 }
-                        
-                return  false;
-        });        
 
-        $('.invite').keyup(function(){
+                return false;
+        });
+
+        $('.invite').keyup(function () {
                 $('.form-error-msg').empty();
-                $('.invite').css({'border':'2px solid rgb(0,0,0,0.3)'})
+                $('.invite').css({ 'border': '2px solid rgb(0,0,0,0.3)' })
         });
         //Form Submission
 
         //Country Drop Down
-        function createDropDown(classNames,ele){
+        function createDropDown(classNames, ele) {
                 const selectCountry = `
                         <select name="country" id="country" class='${classNames}' >
                                 <option value="">Select Country</option>
