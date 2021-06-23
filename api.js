@@ -24,7 +24,7 @@ $(document).ready(function(){
         
         
                 if(Cookies.get('niomvisitor')==undefined && url_param.get("d")==null && url_param.get("vmail")==null &&  url_param.get("vc")==null ){
-                        showLandingPage();
+                //       showLandingPage();
                 }
         
         //AfterLoad
@@ -225,18 +225,18 @@ $(document).ready(function(){
         //DataMail
         var is_management = true;
         //Team Mate Registration
-        if(url_param.get('d')){
-                $('#modal-box').css({'display':'block'});
-                $('#orgForm').css({'display':'none'});
-                $('.modal-sub-heading').empty().text('Please provide some basic details to register your account.');
-                $('#registerForm').css({"display":'flex'});
-                $("#steps").css({"display":"none"})
-                var decrypt = decryptData (decodeURIComponent(url_param.get('d')));
-                $('#registerForm').find('input[name="email"]').val(getData(decrypt).email);
-                $('.rl').remove();
-                is_management = false;
-                localStorage.setItem('oid',getData(decrypt).id);
-        }
+        // if(url_param.get('d')){
+        //         $('#modal-box').css({'display':'block'});
+        //         $('#orgForm').css({'display':'none'});
+        //         $('.modal-sub-heading').empty().text('Please provide some basic details to register your account.');
+        //         $('#registerForm').css({"display":'flex'});
+        //         $("#steps").css({"display":"none"})
+        //         var decrypt = decryptData (decodeURIComponent(url_param.get('d')));
+        //         $('#registerForm').find('input[name="email"]').val(getData(decrypt).email);
+        //         $('.rl').remove();
+        //         is_management = false;
+        //         localStorage.setItem('oid',getData(decrypt).id);
+        // }
 
         if(url_param.get("vmail") && url_param.get("vc")){
                 var decryptmail = decryptData (decodeURIComponent(url_param.get('vmail')));
@@ -283,9 +283,8 @@ $(document).ready(function(){
                 }
 
                 if(ec == 0){
-                        $('#modal-box').css({'display':'block'});
-                        $('#orgForm').find('input[name="email"]').val(`${$('#email-ip').val()}`);
-                }
+                        window.location.href=`./signup.html?ved=${dataEncrypt(`6and${$('#email-ip').val()}`)}`;
+                 }
                 return false;
         })
 

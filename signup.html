@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-signin-client_id"
+      content="116962823324-ri4fi4svevlq47fc12ovs55r52i5b71h.apps.googleusercontent.com"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./signup.css" />
+    <title>NioMPMO-Nanotech Soft-App It Solution</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./static/images/favicon-icon-.png"
+    />
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-1268WQ48BP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-1268WQ48BP");
+    </script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+    <!-- Sign Up Page -->
+    <div class="signup-outer">
+      <div class="signup-nav">
+        <a href="./index.html">
+          <img
+            src="./static/images/brand-logo.png"
+            alt=""
+            style="transform: scale(1.3)"
+          />
+        </a>
+        <div class="right-nav">
+          <span class="nav-text">Already have NioM PMO?</span>
+          <a href="https://staging.app.niompmo.com/login" class="login-new"
+            ><span>Login</span></a
+          >
+        </div>
+      </div>
+
+      <div class="form-outer">
+        <div class="form-container">
+          <div class="form-container-inner">
+            <div class="msg-row">
+              <p class="modal-welcome-msg">
+                Welcome to
+                <span style="color: rgb(81, 97, 172); font-weight: 500">N</span
+                ><span style="color: rgb(81, 97, 172); font-weight: 500">i</span
+                ><span style="color: rgb(44, 55, 141); font-weight: 500">o</span
+                ><span style="color: rgb(44, 55, 141); font-weight: 500">M</span
+                ><span style="color: rgb(242, 106, 156); font-weight: 500"
+                  >P</span
+                ><span style="color: rgb(242, 106, 156); font-weight: 500"
+                  >M</span
+                ><span style="color: rgb(242, 106, 156); font-weight: 500"
+                  >O</span
+                >
+              </p>
+            </div>
+            <form  method="POST" action="" id="signup-lform">
+              <div class="sign-form-flex-container">
+                <div class="form-field tn">
+                  <label for="org_name"
+                    >Organization Name
+                    <div class="Asterisk">*</div>
+                  </label>
+                  <input
+                    type="text"
+                    name="org_name"
+                    id="org_name"
+                    placeholder="Enter Organization Name"
+                    class="sf sf1"
+                  />
+                </div>
+                <div class="form-field tn">
+                  <label for="business_division"
+                    >Business Divison
+                    <div class="Asterisk">*</div></label
+                  >
+                  <input
+                    type="text"
+                    name="business_division"
+                    id="business_division"
+                    placeholder="Enter Business Division"
+                    class="sf2 sf"
+                  />
+                </div>
+              </div>
+
+              <div class="sign-form-flex-container">
+                <div class="form-field">
+                  <label for="fname"
+                    >First Name
+                    <div class="Asterisk">*</div></label
+                  >
+                  <input
+                    type="text"
+                    name="fname"
+                    id="fname"
+                    placeholder="Enter Your First Name"
+                    class="sf sf3 sft sft1"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="lname"
+                    >Last Name
+                    <div class="Asterisk">*</div></label
+                  >
+                  <input
+                    type="text"
+                    name="lname"
+                    id="lname"
+                    placeholder="Enter Your Last Name"
+                    class="sf sf4 sft sft2"
+                  />
+                </div>
+              </div>
+
+              <div class="sign-form-flex-container">
+                <div class="form-field">
+                  <label for="email"
+                    >Email Address
+                    <div class="Asterisk">*</div></label
+                  >
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Enter Your Email Address"
+                    class="sf sf5"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="uname"
+                    >Username
+                    <div class="Asterisk">*</div></label
+                  >
+                  <input
+                    type="text"
+                    name="uname"
+                    id="uname"
+                    placeholder="Enter Your Username"
+                    class="sf sf6 sft sft3"
+                  />
+                </div>
+              </div>
+
+              <div class="sign-form-flex-container">
+                <div class="form-field">
+                  <label for="city"
+                    >City
+                    <div class="Asterisk">*</div></label
+                  >
+                  <input
+                    type="text"
+                    name="city"
+                    id="city"
+                    placeholder="Enter Your City"
+                    class="sf sf7 sft sft4"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="country"
+                    >Country
+                    <div class="Asterisk">*</div></label
+                  >
+                  <select
+                    name="country"
+                    id="country"
+                    class="sf signup-country sf8 sft sft5"
+                  ></select>
+                </div>
+              </div>
+
+              <div class="sign-form-flex-container">
+                <div class="form-field tn">
+                  <label for="rUL"
+                    >Required User Licenses
+                    <div class="Asterisk">*</div></label
+                  >
+                  <input
+                    type="number"
+                    name="rUL"
+                    id="rUL"
+                    placeholder="Enter Required User Licenses"
+                    class="sf sf9"
+                    min="1"
+                  />
+                  <div id="rUL-label" style="display: none"></div>
+                </div>
+                <div class="form-field tn">
+                  <label for="role"
+                    >Role
+                    <div class="Asterisk">*</div></label
+                  >
+                  <select name="role" id="role" class="sf sf10">
+                    <option value="">Select Your Role</option>
+                    <option value="Sponsor Initiator">Sponsor/Initiator</option>
+                    <option value="Project Manager">Project Manager</option>
+                    <option value="Business Analyst">Business Analyst</option>
+                    <option value="Scrum Master">Scrum Master</option>
+                    <option value="Product Owner">Product Owner</option>
+                    <option value="Cross-functional Project Manager">
+                      Cross-Functional Project Manager
+                    </option>
+                    <option value="Team Lead">Team Lead</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="sign-form-flex-container">
+                <div class="form-field">
+                  <label for="pass"
+                    >Password
+                    <div class="Asterisk">*</div></label
+                  >
+                  <input
+                    type="password"
+                    name="pass"
+                    id="pass"
+                    placeholder="Enter Your Password"
+                    class="sf sf11 sft sft6"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cpass"
+                    >Confirm Password
+                    <div class="Asterisk">*</div>
+                  </label>
+                  <input
+                    type="password"
+                    name="cpass"
+                    id="cpass"
+                    placeholder="Enter Confirm Password"
+                    class="sf sf12 sft sft7"
+                  />
+                </div>
+              </div>
+              <div class="sign-form-flex-container last-check">
+                <input type="checkbox" id="check" />&nbsp;
+                <label for="check">I am agree to the</label>&nbsp;
+                <span
+                  ><a href="./policy.html#terms" target="blank"
+                    >Terms of Services</a
+                  >,
+                  <a href="./policy.html#privacy" target="_blank"
+                    >Privacy Policy</a
+                  >
+                  and
+                  <a href="./policy.html#refund" target="_blank"
+                    >Cancellation Policy</a
+                  ></span
+                >
+              </div>
+              <div
+                class="form-field error-msg-form"
+                style="text-align: center; width: 100%"
+              ></div>
+
+              <div class="form-field" style="text-align: center; width: 100%">
+                <span><button id="signUpBtn" disabled>Submit</button></span>
+              </div>
+            </form>
+            <div id="loading">
+              <div class="eye"></div>
+              <div class="eye-shadow"></div>
+            </div>
+            <div id="success-msg">
+              <canvas style="pointer-events: none" id="canvas"></canvas>
+              <div class="success-bg">
+                <div class="success-bg-content">
+                  <p>
+                    Congratulation! You have received early bird offer on our
+                    new product launch. Please
+                    <a href="https://www.app.niompmo.com">click here</a> to
+                    login in the NioM PMO and have access of all the features.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div  id="success-msg2">
+              <p style="font-weight: 600;" >Sign up Completed!!</p>
+              <h6 style="text-align: center;">
+                You have successfully created your account. To begin and start
+                using NioM PMO,
+                 Please <a href="https://www.app.niompmo.com">click here</a>
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img
+      src="./static/images/signupImg/wave.svg"
+      alt=""
+      width="100%"
+      class="bottom-wave"
+    />
+
+    <!-- Sign Up Page -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <script src="./index.js"></script>
+    <script src="./Cookies.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="./price.js"></script>
+    <script src="./api.js"></script>
+    <script src="./signup.js"></script>
+  </body>
+</html>

@@ -205,31 +205,28 @@ $(document).ready(function(){
 
 
     var scroll_w = $('#ls-scroll').width();
-
-
-    document.getElementById('btn-right').onclick = function () {
+    $("#btn-right").click(function(){
         document.getElementById('ls-scroll').scrollLeft += scroll_w;
-      }
-      document.getElementById('btn-left').onclick = function () {
+    })
+    $("#btn-left").click(function(){
         document.getElementById('ls-scroll').scrollLeft -= scroll_w;
-      }
+    })
 
     var sw = $('#s-scroll').width();
-    document.getElementById('s-left').onclick = function () {
+    $("#s-left").click(function(){
         document.getElementById('s-scroll').scrollLeft -= sw;
-      }
-      document.getElementById('s-right').onclick = function () {
+    })
+    $("#s-right").click(function(){
         document.getElementById('s-scroll').scrollLeft += sw;
-      }
+    })
 
-      var ew = $('#e-scroll').width();
-      document.getElementById('e-left').onclick = function () {
-          document.getElementById('e-scroll').scrollLeft -= ew;
-        }
-        document.getElementById('e-right').onclick = function () {
-          document.getElementById('e-scroll').scrollLeft += ew;
-        }
-
+    var ew = $('#e-scroll').width();
+    $("#e-left").click(function(){
+        document.getElementById('e-scroll').scrollLeft -= ew;
+    })
+    $("#e-right").click(function(){
+        document.getElementById('e-scroll').scrollLeft += ew;
+    })
     const  nav_scroll = $('#nav-scroll');
     const nav_fst = $('#nav-fst');
 

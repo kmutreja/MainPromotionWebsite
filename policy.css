@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 8vh;
+  background-color: white;
+  z-index: 2;
+  box-shadow: 30px 0 25px rgb(126 142 160 / 10%);
+}
+
+.header > li {
+  text-decoration: none;
+  margin-right: 11%;
+  list-style-type: none;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.side-bar {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  width: 20vw;
+  height: 91.6vh;
+  box-shadow: 30px 0 25px rgb(126 142 160 / 10%);
+  position: fixed;
+  top: 0%;
+  z-index: 0;
+  font-weight: bold;
+  font-size: 0.875rem;
+  padding: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  margin: 6% 6%;
+  cursor: pointer;
+}
+
+.active,
+#MyDiv > a:hover {
+  color: #796eff;
+}
+
+.container {
+  position: absolute;
+  width: 71vw;
+  top: 11%;
+  margin-left: 24%;
+}
+
+.content > p {
+  margin: 2% 0;
+  word-spacing: 3px;
+}
+
+.content > h2 {
+  margin: 3% 0%;
+  font-weight: 400;
+  font-size: 184%;
+}
+
+.content > h1 {
+  margin-bottom: 3%;
+  font-weight: 500;
+}
+
+.content > li {
+  position: relative;
+  left: 2%;
+  margin-bottom: 1%;
+}
+.content > strong > p {
+  margin: 2% 0;
+}
+
+.content > p > a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 480px) {
+  #MyDiv > a {
+    margin: 26% 6%;
+    font-size: 61%;
+    padding: 4%;
+  }
+  ul {
+    height: 18vh;
+    flex-direction: column;
+  }
+  .container {
+    top: 15%;
+    font-size: 0.54rem;
+  }
+  #MyDiv {
+    top: 15%;
+  }
+  .header {
+    height: 14vh;
+    background-color: white;
+    font-size: 0.64rem;
+  }
+}

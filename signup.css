@@ -1,0 +1,376 @@
+.signup-outer {
+  display: block;
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+.sign-form-flex-container {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+
+.bottom-wave {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  object-fit: fill;
+  z-index: 1000;
+}
+.signup-nav {
+  width: 100%;
+  display: block;
+  float: left;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  padding: 1%;
+  background-color: #fff;
+}
+
+.signup-nav img {
+  display: block;
+  float: left;
+  width: 90px;
+  margin-left: 20px;
+}
+
+.right-nav {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+  float: right;
+  font-size: 16px;
+  color: #8e8e8e;
+  width: 50%;
+}
+
+.nav-text {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2%;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+}
+
+.login-new {
+  display: flex;
+  display: -webkit-flex;
+  width: 100px;
+  padding: 1%;
+  line-height: 30px;
+  float: right;
+  color: #fff !important;
+  background: #615dc6;
+  box-shadow: 0px 3px 6px #615dc645;
+  border-radius: 4px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  text-decoration: none !important;
+}
+
+.form-outer {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  float: left;
+  -webkit-justify-content: center;
+  -webkit-flex-direction: column;
+  -webkit-align-items: center;
+  z-index: 1024;
+  position: relative;
+  max-height: auto;
+  min-height: 700px;
+  padding: 2%;
+}
+
+.form-container {
+  background: #dbd9ff 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  padding: 0.6%;
+  display: flex;
+  display: -webkit-flex;
+  width: 70%;
+}
+
+.form-container-inner {
+  padding: 2%;
+  width: 100%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 10px #00000057;
+  border-radius: 6px;
+  display: block;
+  float: left;
+  height: auto;
+  min-height: 500px;
+}
+
+.form-field {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  padding: 0.5%;
+}
+
+.form-field label {
+  width: 100%;
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  color: #8e8e8e;
+  display: flex;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 1.5% 1%;
+  border: 1px solid #c9c9c9;
+  display: block;
+  font-size: 16px;
+}
+
+.form-field select {
+  width: 100%;
+  padding: 1.5% 1%;
+  border: 1px solid #c9c9c9;
+  display: block;
+  outline: none;
+}
+
+.form-field button {
+  padding: 1% 3%;
+  border-radius: 6px;
+  color: #fff;
+  background: #b7b5b5;
+  border: 1px solid #b7b5b5;
+}
+
+.error-msg-form {
+  color: red;
+  font-size: 16px;
+}
+
+.modal-sub-heading {
+  font-size: 18px;
+}
+
+.modal-welcome-msg {
+  font-size: 37px;
+}
+
+.last-check {
+  padding: 1%;
+  flex-direction: row !important;
+  -webkit-flex-direction: row !important;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  color: #8e8e8e !important;
+}
+
+.last-check label {
+  margin: 0;
+  font-size: 16px;
+}
+
+.last-check a {
+  color: #615dc6 !important;
+  text-decoration: underline;
+  font-size: 16px !important;
+}
+
+.last-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.2%;
+}
+
+@media (max-width: 900px) {
+  .bottom-wave {
+    bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1%;
+    width: 100%;
+  }
+
+  .signup-nav {
+    padding: 20px;
+  }
+
+  .signup-nav img {
+    width: 70px;
+    margin-left: 10px;
+  }
+
+  .right-nav {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sign-form-flex-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: column;
+    -webkit-align-items: center;
+  }
+
+  .form-field {
+    width: 100%;
+  }
+
+  .form-field label {
+    font-size: 14px;
+  }
+
+  .form-field input {
+    font-size: 14px;
+  }
+
+  .form-field select {
+    font-size: 14px;
+  }
+
+  .form-field button {
+    font-size: 14px;
+  }
+
+  .error-msg-form {
+    font-size: 12px;
+  }
+
+  .modal-sub-heading {
+    font-size: 16px;
+  }
+
+  .modal-welcome-msg {
+    font-size: 28px;
+  }
+
+  .form-field button {
+    font-size: 13px;
+  }
+
+  .last-check label {
+    font-size: 14px;
+  }
+
+  .last-check a {
+    font-size: 14px !important;
+  }
+
+  .right-nav {
+    width: 70%;
+  }
+}
+
+/* Edited by Tushar Sharma starts here
+10th june 2021 */
+
+
+.disableBtn{
+  background-color: rgb(107, 100, 100);
+}
+
+#rUL-label{
+  font-size: 13px;
+  color: red; 
+}
+
+#rUL-label-link{
+  text-decoration: underline;
+  color: #171718;
+  font-weight: bold;
+}
+
+.Asterisk{
+  color: red;
+}
+
+
+
+.design {
+  position: absolute;
+  border-bottom: 421px solid darkred;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  height: 420px;
+  width: 160px;
+  transform: rotate(270deg);
+  z-index: 20;
+}
+
+.triangle1{
+  position: absolute;
+  border-bottom: 316px solid darkred;
+  border-right: 71px solid transparent;
+  border-left: 41px solid transparent;
+  width: 94px;
+  transform: rotate(216deg);
+  right: 85px;
+  z-index: -1;
+  top: 2px;
+}
+
+.success-bg{
+  background-image: linear-gradient(to bottom, #9890e3 0%, #b1f4cf 100%);
+  clip-path: polygon(0 9%, 92% 0, 100% 75%, 100% 75%, 57% 100%, 73% 80%, 8% 80%);
+  border-radius: 10%;  
+  height: 46vh;
+  width: 55vw;
+}
+
+.success-bg-content{
+  width: 50vw;
+  height: 51vh;
+  display: flex;
+  justify-content: center;flex-wrap: wrap;
+  font-size: 77%;
+  color: white;
+
+}
+
+.success-bg-content p{
+  margin: 7% 3%;
+  position: relative;
+  left: 6%;
+}
+
+.success-bg-content a{
+  text-decoration: underline;
+}
+
+canvas {
+  cursor: crosshair;
+  display: block;
+  position: absolute;
+  top: 23%;
+  height: 54%;
+  width: 65%;
+}
+
+
+
+/* Edited by Tushar Sharma ends here
+10th june 2021 */

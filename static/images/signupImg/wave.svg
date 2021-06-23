@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1374.119" height="528.041" viewBox="0 0 1374.119 528.041">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b89af2"/>
+      <stop offset="1" stop-color="#73acff"/>
+    </linearGradient>
+  </defs>
+  <path id="login_page_bg" data-name="login page bg" d="M1,46s171.756,5.219,420,84c0,0,203.54,68.534,534-43,0,0,258.969-96,420.119-84.7V526.095L1,529.42Z" transform="translate(-1 -1.379)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+</svg>

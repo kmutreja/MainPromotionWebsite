@@ -26,6 +26,7 @@
                 gtag('config', 'G-1268WQ48BP');
         </script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <link rel="stylesheet" href="./pricing.css">
 </head>
 
 <body>
@@ -57,6 +58,11 @@
                                                         <a class="nav-link nav-color-link lk" href="#home">Home</a>
                                                 </li>
                                                 <li class="nav-item nav-item-back-color">
+                                                        <a class="nav-link nav-color-link lk"
+                                                                href="https://www.nanotech-softapp.com"
+                                                                target="_blank">About Us</a>
+                                                </li>
+                                                <li class="nav-item nav-item-back-color">
                                                         <a class="nav-link nav-color-link lk" href="#price">Pricing</a>
                                                 </li>
                                                 <li class="nav-item nav-item-back-color">
@@ -66,7 +72,7 @@
                                                 <li class="nav-item nav-item-back-color">
                                                         <a class="nav-link nav-color-link lk"
                                                                 href="https://clutch.co/profile/nanotech-soft-n-app-it-solutions?utm_source=widget&utm_medium=1&utm_campaign=widget&utm_content=num_reviews#reviews"
-                                                                target="_balnk">Reviews</a>
+                                                                target="_blank">Reviews</a>
                                                 </li>
                                                 <li class="nav-item nav-item-back-color">
                                                         <a class="nav-link nav-color-link lk"
@@ -74,8 +80,8 @@
                                                 </li>
                                                 <li class="nav-item nav-item-back-color">
                                                         <a class="nav-link nav-color-link lk"
-                                                                href="https://www.nanotech-softapp.com"
-                                                                target="_blank">Join Us</a>
+                                                                href="https://calendly.com/nanotechsoftapp"
+                                                                target="_blank">Book a Demo</a>
                                                 </li>
                                                 <li class="nav-item ml-auto navbtn">
                                                         <a class="nav-link color-navbtn2 ak1 alc"
@@ -84,9 +90,8 @@
                                                                 target="_blank">Login</a>
                                                 </li>
                                                 <li class="nav-item navbtn2">
-                                                        <a class="nav-link color-navbtn ak2 alc" href="#sign-up"
-                                                                id="signup"
-                                                                style="font-size: 16px !important; font-weight: 500 !important;">Sign
+                                                        <a class="nav-link color-navbtn ak2 alc" href="#price"
+                                                                style="font-size: 16px !important; font-weight: 500 !important;" >Sign
                                                                 Up</a>
                                                 </li>
                                         </ul>
@@ -998,365 +1003,256 @@
 
 
 
+                <!-- HTML edited by Tushar Sharma
+                6th June 2021 -->
+
+
                 <!--Price Card-->
                 <div class="outer-container" id="price">
-                        <h2 style="margin-top:2%;">We Provide Flexible Plans</h2>
-                        <h2><span>For Pricing,</span> please contact us using below contact form</h2>
-                        <div class="price-container" style="display: none;">
-
-                                <div class="price-card">
-                                        <div class="price-head">Boost</div>
-                                        <div class="price-head"
-                                                style="padding: 0; margin: 0; font-weight: 300; font-size: 18px;">Free
-                                                (Contact
-                                                Us for No. of Licenses)</div>
-                                        <div class="price-cont">
-                                                <div class="main-price" style="display: none;">
-                                                        <div class="dollar">$</div>
-                                                        <div class="from">from</div>
-                                                        <div class="number">99</div>
-                                                        <div class="month">per month</div>
+                        <div class="price-heading w100 font-large font-weight-large">Plans and pricing</div>
+                        <div class="price-heading  w100 font-medium font-weight-medium">
+                                
+                        </div>
+                        <span class="toggle">
+                            <strong>Billing Cycle: &nbsp;</strong> Monthly<label class="toggle-switch">
+                            <input id="togglePrice" onclick="toggleBtn('priceCard')" type="checkbox" >
+                            <span class="slider round"></span>
+                            </label>Anually
+                        </span>
+                        <div id="priceCardOn" class="w100 price-tag-container" style="position: absolute; visibility: visible;">
+                                <div style="left: 20%;" class="border-outline"></div>
+                                <div class="price-tag-outer" style="overflow: hidden; right: 1%;">
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <div class="price-tag flex-center-center">
+                                                <div id="freeMonthPlan" class="flex w100 flex-center-center font-normal font-weight-medium price-tag-head ">Basic/Free
+                                                         
                                                 </div>
-                                        </div>
-                                        <div class="avail-feat">
-                                                <div class="af-1">
-                                                        <div class="txt"> Users</div>
-                                                        <div class="icon"
-                                                                style="font-size: 13px; color: #5d678b;font-weight: bold; width: 20%;">
-                                                                Unlimited</div>
+                                                <div id="freeMonthly" class="flex w100 flex-center-center font-medium font-weight-large price-tag-head dollar-tag">
+                                                        
                                                 </div>
-                                                <div class="af-1">
-                                                        <div class="txt">No. of Projects</div>
-                                                        <div class="icon"
-                                                                style="font-size: 13px; color: #5d678b;font-weight: bold; width: 20%;">
-                                                                Unlimited
-                                                        </div>
+                                                <div class="flex w100 flex-center-center per-user font-weight-normal price-tag-sub-head">
+                                                        Always free for 5 users and 5 projects
                                                 </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Backlog</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
+                                                <div class="flex w100 flex-center-center card-font-size font-weight-normal price-tag-sub-head" >
+                                                        Suitable for small startup
                                                 </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Goal Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
+                                                <div class="flex w100 flex-center-center">
+                                                        <div id="freeMonthBtn"  class="flex flex-center-center price-tag-btn font-small">
+                                                             <a href="./signup.html" target="_blank"> Get Started </a>
+                                                            </div>
+                                                            <div class="flex flex-center-center credit" ><i> No credit card required </i></div>
+                                                           
                                                 </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Agile Dashboard</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Resource Workflow</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Notes</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Automate Sprint Planning</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Sprint Release Track</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Dependency Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Remote Team Monitoring</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Task Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Bug Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Track Code Quality</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Slack Integration</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Risk Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Forecast Project Delivery Date</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Leave Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Resource Calculation</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Document User Stories</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Automate Estimate and Actual Efforts</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Automated Time Sheets</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Email Notifications</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Track Retrospective Meetings</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1" style="background: #ed2939; border: none;">
-                                                        <div class="txt" style="color: white; font-weight: bold;">
-                                                                Artificial
-                                                                Intelligence</div>
-                                                        <div class="circle" style="border: 1.5px solid white;">
-                                                                <div class="rcross" style="color: white;">&#x2715;</div>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="price-btn">
-                                                <a href="" class="activate-lic">Activate Licenses</a>
                                         </div>
                                 </div>
+                                <div class="price-tag-outer" style="overflow: hidden;">
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <div class="price-tag flex-center-center pbdr2">
+                                                <div id="standardMonthlyPlan" class="flex w100 flex-center-center font-normal font-weight-medium price-tag-head">Standard
+                                                        
+                                                </div>
+                                                <div id="standardMonthly" class="flex w100 flex-center-center font-medium font-weight-large price-tag-head dollar-tag">
+                                                        
+                                                </div>
+                                                <div class="flex w100 flex-center-center per-user font-weight-normal price-tag-sub-head">
+                                                        user per month
+                                                </div>
+                                                <div class="flex w100 flex-center-center card-font-size font-weight-normal price-tag-sub-head" >
+                                                        Suitable for such teams who are growing
+                                                </div>
+                                                <div class="flex w100 flex-center-center">
+                                                        <div id="standardMonthlyBtn" class="flex flex-center-center price-tag-btn pbbc2 font-small">
+                                                                <a href="./signup.html" target="_blank"> Start 15 Days Trial  </a>
 
-                                <div class="price-card">
-                                        <div class="price-head">Enterprise</div>
-                                        <div class="price-head"
-                                                style="padding: 0; margin: 0; font-weight: 300; font-size: 18px;">
-                                                Contact Us for
-                                                Pricing</div>
-                                        <div class="price-cont">
-                                                <div class="main-price" style="display: none;">
-                                                        <div class="dollar">$</div>
-                                                        <div class="from">from</div>
-                                                        <div class="number">99</div>
-                                                        <div class="month">per month</div>
+                                                        </div>
+                                                        <div class="flex flex-center-center credit" ><i> No credit card required </i></div>
                                                 </div>
                                         </div>
-                                        <div class="avail-feat">
-                                                <div class="af-1">
-                                                        <div class="txt"> Users</div>
-                                                        <div class="icon"
-                                                                style="font-size: 13px; color: #5d678b;font-weight: bold; width: 20%;">
-                                                                Unlimited</div>
+                                </div>
+                                <div class="price-tag-outer" style="overflow: hidden;">
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <div class="price-tag flex-center-center pbdr3">
+                                                <div id="premiumMonthlyPlan" class="flex w100 flex-center-center font-normal font-weight-medium price-tag-head">Premium
+                                                         
                                                 </div>
-                                                <div class="af-1">
-                                                        <div class="txt">No. of Projects</div>
-                                                        <div class="icon"
-                                                                style="font-size: 13px; color: #5d678b;font-weight: bold; width: 20%;">
-                                                                Unlimited
-                                                        </div>
+                                                <div id="premiumMonthly" class="flex w100 flex-center-center font-medium font-weight-large price-tag-head dollar-tag">
+                                                        
                                                 </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Backlog</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
+                                                <div class="flex w100 flex-center-center per-user font-weight-normal price-tag-sub-head">
+                                                        user per month
                                                 </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Goal Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Agile Dashboard</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Resource Workflow</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Notes</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Automate Sprint Planning</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Sprint Release Track</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Dependency Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Remote Team Monitoring</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Task Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Bug Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Track Code Quality</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Slack Integration</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Risk Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Forecast Project Delivery Date</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Leave Management</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Resource Calculation</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Document User Stories</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Automate Estimate and Actual Efforts</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Automated Time Sheets</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Email Notifications</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1">
-                                                        <div class="txt">Track Retrospective Meetings</div>
-                                                        <div class="circle">
-                                                                <div class="rect"></div>
-                                                        </div>
-                                                </div>
-                                                <div class="af-1" style="background: #4cbb17; border: none;">
-                                                        <div class="txt" style="color: white; font-weight: bold;">
-                                                                Artificial
-                                                                Intelligence</div>
-                                                        <div class="circle" style="border: 1.5px solid white;">
-                                                                <div class="rect"
-                                                                        style="border-bottom: 2px solid white; border-left: 1.5px solid white;">
-                                                                </div>
-                                                        </div>
-                                                </div>
+                                                <div class="flex w100 flex-center-center card-font-size font-weight-normal price-tag-sub-head" >
+                                                        Suitable for teams that need to increase productivity with effective project plan                                               </div>
+                                                <div class="flex w100 flex-center-center">
+                                                        <div id="premiumMonthlyBtn" class="flex flex-center-center price-tag-btn pbbc3 font-small">
+                                                                <a href="./signup.html" target="_blank"> Start 15 Days Trial  </a>
 
+                                                        </div>
+                                                        <div class="flex flex-center-center credit" ><i> No credit card required </i></div>
+                                                </div>
                                         </div>
-                                        <div class="price-btn">
-                                                <a href="#contact">Contact Us</a>
+                                </div>
+                                <div class="price-tag-outer" style="overflow: hidden;">
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <span class="corner"></span>
+                                        <div class="price-tag flex-center-center pbdr4">
+                                                <div class="flex w100 flex-center-center font-normal font-weight-medium price-tag-head">
+                                                        Enterprise
+                                                </div>
+                                                <div style="margin-top: 29%;" class="flex w100 flex-center-center font-small font-weight-normal price-tag-sub-head" >
+                                                        For pricing details, talk to our sales team or send us email.
+                                                </div>
+                                                <div class="flex w100 flex-center-center font-small font-weight-normal price-tag-sub-head" >
+                                                        <!-- For enterprises with global scale, security, and governance needsS -->
+                                                </div>
+                                                <div class="flex w100 flex-center-center">
+                                                        <div class="flex flex-center-center price-tag-btn pbbc4 font-small">
+                                                                <a style="text-decoration: none; color: white;" href="mailto: support@niompmo.com">   Contact Sales </a>
+                                                        </div>
+                                                        <!-- <div class="flex flex-center-center credit" ><i> No credit card required </i></div> -->
+                                                </div>
                                         </div>
                                 </div>
                         </div>
+
+
+                        <div id="priceCardOff" class="w100 price-tag-container" style="visibility: hidden;" >
+
+                            <div class="border-outline"></div>
+                            <div class="price-tag-outer" style="right: 1%;">
+
+                                    <span style="display: none;" class="corner"></span>
+                                    <span style="display: none;" class="corner"></span>
+                                    <span style="display: none;" class="corner"></span>
+                                    <span style="display: none;" class="corner"></span>
+                            
+                                    <div class="price-tag flex-center-center">
+                                            <div id="freeAnnualPlan"  class="flex w100 flex-center-center font-normal font-weight-medium price-tag-head">Basic/Free
+                                                    
+                                            </div>
+                                            <div id="freeAnnual" class="flex w100 flex-center-center font-medium font-weight-large price-tag-head dollar-tag">
+                                                    
+                                            </div>
+                                            <div class="flex w100 flex-center-center per-user font-weight-normal price-tag-sub-head">
+                                                Always free for 5 users and 5 projects
+                                        </div>
+                                        <div class="flex w100 flex-center-center card-font-size font-weight-normal price-tag-sub-head" >
+                                                Suitable for small startup
+                                        </div>
+                                            <div class="flex w100 flex-center-center">
+                                                    <div id="freeAnnualBtn" class="flex flex-center-center price-tag-btn font-small">
+                                                        <a href="./signup.html" target="_blank"> Get Started </a>
+                                                    </div>
+                                                    <div class="flex flex-center-center credit" ><i> No credit card required </i></div>
+                                            </div>
+                                    </div>
+
+                            </div>
+                            <div class="price-tag-outer" style="overflow: visible;">
+                                    <!-- <div class="sticker">Most Popular</div> -->
+                                    <span style="display: none;" class="corner"></span>
+                                    <span style="background-color: green; z-index: 6;" class="corner">-50%</span>
+                                    <span style="display: none" class="corner"> </span>
+                                    <span style="display: none;" class="corner"></span>
+                                    <div class="price-tag flex-center-center pbdr2">
+                                            <div id="standardAnnualPlan" class="flex w100 flex-center-center font-normal font-weight-medium price-tag-head">Standard
+                                                    
+                                            </div>
+                                            <div id="standardAnnual" class="flex w100 flex-center-center font-medium font-weight-large price-tag-head dollar-tag">
+                                                    
+                                            </div>
+                                            <div class="flex w100 flex-center-center per-user font-weight-normal price-tag-sub-head">
+                                                user per month
+                                        </div>
+                                        <div class="flex w100 flex-center-center card-font-size font-weight-normal price-tag-sub-head" >
+                                                Suitable for such teams who are growing
+                                        </div>
+                                            <div class="flex w100 flex-center-center">
+                                                    <div id="standardAnnualBtn" class="flex flex-center-center price-tag-btn pbbc2 font-small">
+                                                        <a href="./signup.html" target="_blank"> Start 15 Days Trial  </a>
+                                                    </div>
+                                                    <div class="flex flex-center-center credit" ><i> No credit card required </i></div>
+                                            </div>
+                                    </div>
+                            </div>
+                            <div class="price-tag-outer" style="overflow: visible;">
+                                    <span style="display: none;" class="corner"></span>
+                                    <span style="  background-color: green; z-index: 6;" class="corner">-40%</span>
+                                    <span style="display: none;" class="corner"></span>
+                                    <span style="display: none;" class="corner"></span>
+                                    <div class="price-tag flex-center-center pbdr3">
+                                            <div id="premiumAnnualPlan" class="flex w100 flex-center-center font-normal font-weight-medium price-tag-head">Premium
+                                                     
+                                            </div>
+                                            <div id="premiumAnnual" class="flex w100 flex-center-center font-medium font-weight-large price-tag-head dollar-tag">
+                                                    
+                                            </div>
+                                            <div class="flex w100 flex-center-center per-user font-weight-normal price-tag-sub-head">
+                                                user per month
+                                        </div>
+                                        <div class="flex w100 flex-center-center card-font-size font-weight-normal price-tag-sub-head" >
+                                                Suitable for teams that need to increase productivity with effective project plan                                      </div>
+                                            <div class="flex w100 flex-center-center">
+                                                    <div id="premiumAnnualBtn" class="flex flex-center-center price-tag-btn pbbc3 font-small">
+                                                        <a href="./signup.html" target="_blank"> Start 15 Days Trial  </a>
+
+                                                    </div>
+                                                    <div class="flex flex-center-center credit" ><i> No credit card required </i></div>
+                                            </div>
+                                    </div>
+                            </div>
+                            <div class="price-tag-outer" style="overflow: visible;">
+                                    <span style="display: none;" class="corner"></span>
+                                    <span style="display: none;" class="corner"></span>
+                                    <span style="display: none;" class="corner"></span>
+                                    <span style="display: none;" class="corner"></span>
+                                    <div class="price-tag flex-center-center pbdr4">
+                                            <div class="flex w100 flex-center-center font-normal font-weight-medium price-tag-head">
+                                                    Enterprise
+                                            </div>
+                                            <div style="margin-top: 29%;" class="flex w100 flex-center-center font-small font-weight-normal price-tag-sub-head" >
+                                                For pricing details, talk to our sales team or send us email.
+                                        </div>
+                                            <div class="flex w100 flex-center-center font-small font-weight-normal price-tag-sub-head" >
+                                                    <!-- For enterprises with global scale, security, and governance needs -->
+                                            </div>
+                                            <div class="flex w100 flex-center-center">
+                                                    <div  class="flex flex-center-center price-tag-btn pbbc4 font-small">
+                                                         <a style="text-decoration: none; color: white;" href="mailto: support@niompmo.com">   Contact Sales </a>
+                                                    </div>
+                                                    <!-- <div class="flex flex-center-center credit" ><i> No credit card required </i></div> -->
+                                            </div>
+                                    </div>
+                            </div>
+
+                    </div>
+
+
+                    <!-- HTML edited by Tushar Ends here
+                    6th June 2021 -->
+
+
+                        <div class="price-features-container">
+                                <div class="flex w100 flex-start font-small font-weight-medium price-feature-head">
+                                        <div class="price-feature-col">Features</div>
+                                        <div class="price-feature-col border-color">Basic</div>
+                                        <div class="price-feature-col">Standard</div>
+                                        <div class="price-feature-col">Premium</div>
+                                        <div class="price-feature-col">Enterprise</div>
+                                </div>
+                        </div>
                 </div>
-                </section>
                 <div class="dot-container" style="padding-top: 0;">
                 </div>
                 <div class="dot-container2">
@@ -1780,14 +1676,14 @@
                                                                         placeholder="No. of Licenses Required *"
                                                                         name="nlic" id="nlic">
                                                         </div>
-                                                        <div class=" contact-row2"
+                                                        <!-- <div class=" contact-row2"
                                                                 style="justify-content: center; align-items: center;">
                                                                 <input type="checkbox" name="tc" id="tc"
                                                                         style="margin-right: 5px;">
                                                                 <div class="checkbox-cont">I agree to the NioM privacy
                                                                         policy
                                                                         and opt-in to communication from NioM .</div>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="contact-row" style="justify-content: center;">
                                                                 <button type="submit" id="btnf">Submit</button>
                                                         </div>
@@ -2294,6 +2190,7 @@
                                 </div>
                                 <div class="land-half-cont" style="background:#E7EEF8; width: 60%;">
                                         <div class="login-head">
+                                                <span class="flex-land">
                                                 <p class="modal-welcome-msg"
                                                         style="font-weight: 550; font-size: 2.1vw; margin-top: 5%;">
                                                         Welcome to
@@ -2306,25 +2203,27 @@
                                                                 P</span><span
                                                                 style="color: rgb(242,106,156);font-weight: 550; font-size: 2.1vw;">M</span><span
                                                                 style="color: rgb(242,106,156);font-weight: 550; font-size: 2.1vw;">O</span>
-                                                        <br>
-                                                        <span style="font-size: 1vw; font-weight: normal;"></span>
                                                 </p>
-                                                <img src="./static/images/land-ing.svg" alt="" width="27%">
+                                                </span>
+                                                <img src="./static/images/land-ing.svg" alt="" width="20%">
                                         </div>
                                         <form action="" id="landingForm">
+                                                <div class="login-form">
+                                                        <label for="" style="margin-top: 0; width: 100%;font-size: 1.5vw;font-weight: 550;">Get Tour of NioM PMO</label>
+                                                </div>
                                                 <div class="login-form">
                                                         <label for="emailLog">Email</label>
                                                         <input type="email" id="emailLog" name="emailLog"
                                                                 placeholder="Enter Your Email Address" required>
                                                 </div>
                                                 <div class="login-form">
-                                                        <button>Get NioM PMO, it's Free</button>
+                                                        <button> Verify your email id</button>
                                                 </div>
                                                 <div class="login-form">
                                                         <p
                                                                 style="text-align: center; width: 70%; color: #5d678b; margin: 0; font-size: 1.08vw;">
-                                                                ------------------------Or continue
-                                                                with-------------------------
+                                                                -----------------------Or continue
+                                                                with---------------------
                                                         </p>
                                                 </div>
                                                 <div class="login-logos">
@@ -2336,6 +2235,16 @@
                                                         </div>
                                                 </div>
                                         </form>
+                                        <div class="login-form" style="border: 0.054vw solid #5d678b;border-radius: 1vw; margin-top: 1%;">
+                                                <div class="login-form">
+                                                        <label for="" style="margin-top: 0; width: 100%;font-size: 1.5vw;font-weight: 550;">Get direct to access your account </label>
+                                                </div>
+                                                <div class="login-logos" style="margin-top: 2%; margin-left: -13%;">
+                                                        <a href="./signup.html"  class="sign-up-page">SignUp</a> 
+                                                        <span class="text-sp">or</span>
+                                                        <a href="https://www.app.niompmo.com" target="_blank" class="sign-up-page">Login</a> 
+                                                </div>
+                                        </div>
                                 </div>
                         </div>
                         <div class="land-footer">
@@ -2382,6 +2291,30 @@
                         </div>
                 </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         <div id="outerLogo" style="background: none;">
                 <div class="modal-main">
                         <div class="modal-content-box" style="box-shadow: none; background: none;">
@@ -2437,6 +2370,7 @@
         <script src="./Cookies.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="./api.js"></script>
+        <script src="./price.js"></script>
         <script>
                 function signOut(){
                         var auth2 = gapi.auth2.getAuthInstance();
@@ -2450,7 +2384,7 @@
                                 var profile = googleUser.getBasicProfile();
                                 axios({
                                         method: 'post',
-                                        url: 'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
+                                        url: 'https://www.staging.backend.niompmo.com/account/api/promotion_mail/',
                                         data: {
                                                 subject: "Visitor",
                                                 to_emails: ["marketing@niompmo.com"],
@@ -2467,7 +2401,7 @@
                                         $(".main-page").show();
                                         axios({
                                                 method: 'post',
-                                                url: 'https://www.production.backend.niompmo.com/dashboard/api/niom_visitor/',
+                                                url: 'https://www.staging.backend.niompmo.com/dashboard/api/niom_visitor/',
                                                 data: {
                                                         email: profile.getEmail()
                                                 }
