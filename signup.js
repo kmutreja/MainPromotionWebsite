@@ -472,7 +472,7 @@ if(url_param.get("subscriber_plan")){
             if(is_manage){
                 for(let i = 0; i <  localStorage.getItem("lic_new"); i++){
                     if(i==0){
-                            licArr.push({'email':`${localStorage.getItem("email_new")}`,'admin_name':`${localStorage.getItem("fname_new")} ${localStorage.getItem("lname_new")}`,'subscription_plan' : `${localStorage.getItem("subscription_plan")}`  });
+                            licArr.push({'email':`${localStorage.getItem("email_new")}`,'admin_name':`${localStorage.getItem("fname_new")} ${localStorage.getItem("lname_new")}`,'subscription_plan' : `${localStorage.getItem("subscription_plan")}`,'user_role': `${localStorage.getItem("role_new")}` });
                     }else {
                             licArr.push({'admin_name':`${localStorage.getItem("fname_new")} ${localStorage.getItem("lname_new")}`,'subscription_plan' : `${localStorage.getItem("subscription_plan")}`});
                     }
@@ -510,7 +510,6 @@ if(url_param.get("subscriber_plan")){
                                 last_name : localStorage.getItem("lname_new"),
                                 email : localStorage.getItem("email_new"),
                                 country : localStorage.getItem("country_new"),
-                                role : localStorage.getItem("role_new"),
                                 organization_id : localStorage.getItem("org_id_new"),
                                 password : localStorage.getItem("pass_new"),
                                 username : localStorage.getItem("uname_new"),
@@ -593,7 +592,6 @@ if(url_param.get("subscriber_plan")){
                         last_name : localStorage.getItem("lname_new"),
                         email : localStorage.getItem("email_new"),
                         country : localStorage.getItem("country_new"),
-                        role : localStorage.getItem("role_new"),
                         organization_id : localStorage.getItem("org_id_new"),
                         password : localStorage.getItem("pass_new"),
                         username : localStorage.getItem("uname_new"),
