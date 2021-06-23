@@ -24,7 +24,7 @@ $(document).ready(function(){
         
         
                 if(Cookies.get('niomvisitor')==undefined && url_param.get("d")==null && url_param.get("vmail")==null &&  url_param.get("vc")==null ){
-                //       showLandingPage();
+                showLandingPage();
                 }
         
         //AfterLoad

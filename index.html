@@ -2384,7 +2384,7 @@
                                 var profile = googleUser.getBasicProfile();
                                 axios({
                                         method: 'post',
-                                        url: 'https://www.staging.backend.niompmo.com/account/api/promotion_mail/',
+                                        url: 'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
                                         data: {
                                                 subject: "Visitor",
                                                 to_emails: ["marketing@niompmo.com"],
@@ -2401,7 +2401,7 @@
                                         $(".main-page").show();
                                         axios({
                                                 method: 'post',
-                                                url: 'https://www.staging.backend.niompmo.com/dashboard/api/niom_visitor/',
+                                                url: 'https://www.production.backend.niompmo.com/dashboard/api/niom_visitor/',
                                                 data: {
                                                         email: profile.getEmail()
                                                 }

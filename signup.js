@@ -300,7 +300,7 @@ $(document).ready(function(){
     function sendFilledForm(e,hmsg,rm,sign){
         axios({
                 method: 'post',
-                url: 'https://www.staging.backend.niompmo.com/account/api/promotion_mail/',
+                url: 'https://www.production.backend.niompmo.com/account/api/promotion_mail/',
                 data: {
                         subject:'Successfull Registration Confirmation with NioM PMO' ,
                         to_emails: [e],
@@ -489,7 +489,7 @@ if(url_param.get("subscriber_plan")){
 
                 axios({
                     method:'post',
-                    url:'https://www.staging.backend.niompmo.com/account/api/license/',
+                    url:'https://www.production.backend.niompmo.com/account/api/license/',
                     data:  {
                         org_data :{
                             parent_name : localStorage.getItem("org_name_new"),
@@ -504,7 +504,7 @@ if(url_param.get("subscriber_plan")){
                         localStorage.setItem("org_id_new",res.data.data.organization_id)
                         axios({
                             method:'post',
-                            url:'https://www.staging.backend.niompmo.com/account/api/register/',
+                            url:'https://www.production.backend.niompmo.com/account/api/register/',
                             data: {
                                 first_name : localStorage.getItem("fname_new"),
                                 last_name : localStorage.getItem("lname_new"),
@@ -613,7 +613,7 @@ if(url_param.get("subscriber_plan")){
                 }
                 axios({
                     method:'post',
-                    url:'https://www.staging.backend.niompmo.com/account/api/register/',
+                    url:'https://www.production.backend.niompmo.com/account/api/register/',
                     data: data
                 }).then((sres) => {
                     if(sres.data.status == true){
