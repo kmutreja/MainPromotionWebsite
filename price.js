@@ -70,59 +70,61 @@ $(document).ready(function(){
        ${priceDataAdd()}
     `)
 
-const priceConversion = async(data) => {
-    const url = 'http://www.geoplugin.net/json.gp?'
-    const response = await fetch(url)
-    const resJSON = await response.json()
-    const val = resJSON['geoplugin_currencySymbol'] + Math.round(data * resJSON['geoplugin_currencyConverter'])
-    return val
+    
+
+// const priceConversion = async(data) => {
+//     const url = 'http://www.geoplugin.net/json.gp?'
+//     const response = await fetch(url)
+//     const resJSON = await response.json()
+//     const val = resJSON['geoplugin_currencySymbol'] + Math.round(data * resJSON['geoplugin_currencyConverter'])
+//     return val
   
-  }
+//   }
   
-  const calculatePrice = async() => {
-    return {
-      basic: {
-        monthly: await priceConversion(0),
-        annual: await priceConversion(0)
-      },
-      standard: {
-        monthly: await priceConversion(9),
-        annual: await priceConversion(4.5),
-      },
-      premium: {
-        monthly: await priceConversion(17),
-        annual: await priceConversion(7)
-      }
-    }
+  // const calculatePrice = async() => {
+  //   return {
+  //     basic: {
+  //       monthly: await priceConversion(0),
+  //       annual: await priceConversion(0)
+  //     },
+  //     standard: {
+  //       monthly: await priceConversion(9),
+  //       annual: await priceConversion(4.5),
+  //     },
+  //     premium: {
+  //       monthly: await priceConversion(17),
+  //       annual: await priceConversion(7)
+  //     }
+  //   }
   
-  }
-const conversionMain = async() =>{
-    const price = await calculatePrice()
-    let monthly = true
-    if (monthly === true){
-        $("#freeMonthly").empty().text(`${price.basic.monthly}`)
-        $("#standardMonthly").empty().text(`${price.standard.monthly}`)
-        $("#premiumMonthly").empty().text(`${price.premium.monthly}`)
-    }
-    $("#togglePrice").click(
-        function(){
-            monthly = !monthly
-            if (monthly === true){
-                $("#freeMonthly").empty().text(`${price.basic.monthly}`)
-                $("#standardMonthly").empty().text(`${price.standard.monthly}`)
-                $("#premiumMonthly").empty().text(`${price.premium.monthly}`)
-            }
-            else{
-                $("#freeAnnual").empty().text(`${price.basic.annual}`)
-                $("#standardAnnual").empty().text(`${price.standard.annual}`)
-                $("#premiumAnnual").empty().text(`${price.premium.annual}`)
-            }  
+  // }
+// const conversionMain = async() =>{
+//     const price = await calculatePrice()
+//     let monthly = true
+//     if (monthly === true){
+//         $("#freeMonthly").empty().text(`${price.basic.monthly}`)
+//         $("#standardMonthly").empty().text(`${price.standard.monthly}`)
+//         $("#premiumMonthly").empty().text(`${price.premium.monthly}`)
+//     }
+//     $("#togglePrice").click(
+//         function(){
+//             monthly = !monthly
+//             if (monthly === true){
+//                 $("#freeMonthly").empty().text(`${price.basic.monthly}`)
+//                 $("#standardMonthly").empty().text(`${price.standard.monthly}`)
+//                 $("#premiumMonthly").empty().text(`${price.premium.monthly}`)
+//             }
+//             else{
+//                 $("#freeAnnual").empty().text(`${price.basic.annual}`)
+//                 $("#standardAnnual").empty().text(`${price.standard.annual}`)
+//                 $("#premiumAnnual").empty().text(`${price.premium.annual}`)
+//             }  
             
-        }
+//         }
         
-        )
-    }
-    conversionMain()
+//         )
+//     }
+//     conversionMain()
 
 })
 
@@ -143,6 +145,8 @@ function toggleBtn(divid)
     document.getElementById(varOn).style.visibility = 'visible';
     }
 } 
+
+$("#togglePrice").click()
 
 
 
