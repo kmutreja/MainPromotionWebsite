@@ -154,7 +154,7 @@ $("#togglePrice").click()
 $("#freeMonthBtn").click(
   function(){
   const text =  $("#freeMonthPlan").text()
-  var newurl = window.location.protocol + "//" + window.location.host + '/signup.html' + `?subscriber_plan=${text}`;
+  var newurl = 'https://www.niompmo.com/signup.html' + `?subscriber_plan=${text}`;
   $("#freeMonthBtn a").attr("href", `${newurl}` )
 
   }
@@ -163,7 +163,7 @@ $("#freeMonthBtn").click(
 $("#freeAnnualBtn").click(
   function(){
   const text =  $("#freeAnnualPlan").text()
-  var newurl = window.location.protocol + "//" + window.location.host + '/signup.html' + `?subscriber_plan=${text}`;
+  var newurl = 'https://www.niompmo.com/signup.html' + `?subscriber_plan=${text}`;
   $("#freeAnnualBtn a").attr("href", `${newurl}` )
 
   }
@@ -172,7 +172,7 @@ $("#freeAnnualBtn").click(
 $("#standardMonthlyBtn").click(
   function(){
   const text =  $("#standardMonthlyPlan").text()
-  var newurl = window.location.protocol + "//" + window.location.host + '/signup.html' + `?subscriber_plan=${text}`;
+  var newurl = 'https://www.niompmo.com/signup.html' + `?subscriber_plan=${text}`;
   $("#standardMonthlyBtn a").attr("href", `${newurl}` )
 
   }
@@ -181,7 +181,7 @@ $("#standardMonthlyBtn").click(
 $("#standardAnnualBtn").click(
   function(){
   const text =  $("#standardAnnualPlan").text()
-  var newurl = window.location.protocol + "//" + window.location.host + '/signup.html' + `?subscriber_plan=${text}`;
+  var newurl = 'https://www.niompmo.com/signup.html' + `?subscriber_plan=${text}`;
   $("#standardAnnualBtn a").attr("href", `${newurl}` )
 
   }
@@ -190,7 +190,7 @@ $("#standardAnnualBtn").click(
 $("#premiumAnnualBtn").click(
   function(){
   const text =  $("#premiumAnnualPlan").text()
-  var newurl = window.location.protocol + "//" + window.location.host + '/signup.html' + `?subscriber_plan=${text}`;
+  var newurl = 'https://www.niompmo.com/signup.html' + `?subscriber_plan=${text}`;
   $("#premiumAnnualBtn a").attr("href", `${newurl}` )
 
   }
@@ -199,7 +199,7 @@ $("#premiumAnnualBtn").click(
 $("#premiumMonthlyBtn").click(
   function(){
   const text =  $("#premiumMonthlyPlan").text()
-  var newurl = window.location.protocol + "//" + window.location.host + '/signup.html' + `?subscriber_plan=${text}`;
+  var newurl ='https://www.niompmo.com/signup.html' + `?subscriber_plan=${text}`;
   $("#premiumMonthlyBtn a").attr("href", `${newurl}` )
 
   }
